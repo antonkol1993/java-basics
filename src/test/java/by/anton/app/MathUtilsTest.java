@@ -2,11 +2,14 @@ package by.anton.app;
 
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.*;
+import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.MethodSource;
 
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
 
 import static by.anton.app.MathUtils.fibonacci;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -66,6 +69,19 @@ public class MathUtilsTest {
     }, delimiter = ':')
     void testFibonacci(long expected, int index) {
         assertEquals(expected, fibonacci(index));
+    }
+
+    @ParameterizedTest
+    @MethodSource("provideFibonacciDataSet")
+    void testFibonacciWithMethod(long expected, int index) {
+        assertEquals(expected, fibonacci(index));
+    }
+
+    private static Stream<Arguments> provideFibonacciDataSet() {
+        return Stream.of(
+                Arguments.of (3L, 5),
+                Arguments.of (5L, 6)
+        );
     }
 
 }
