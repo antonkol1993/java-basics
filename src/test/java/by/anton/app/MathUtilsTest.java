@@ -9,45 +9,28 @@ import java.util.Arrays;
 import java.util.List;
 
 import static by.anton.app.MathUtils.fibonacci;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class MathUtilsTest{
-
-
-
-    //    @BeforeAll
-//    public static void beforeAll() {
-//
-//    }
-//
-//    @BeforeEach
-//    public void before() {
-//
-//    }
-
-    private static int index;
-    private long result;
-
-        @Disabled
+public class MathUtilsTest {
 
     @Test
-    public void testFibonacci() {
+    public void testFibonacciOld() {
 
         MathUtils mathUtils = new MathUtils(8, 7);
-        result = mathUtils.getResult();
-        index = mathUtils.getIndex();
-        Assertions.assertEquals(result, fibonacci(index));
+        long result = mathUtils.getResult();
+        int index = mathUtils.getIndex();
+        assertEquals(result, fibonacci(index));
 
         MathUtils mathUtils2 = new MathUtils(13, 8);
         result = mathUtils2.getResult();
         index = mathUtils2.getIndex();
-        Assertions.assertEquals(result, fibonacci(index));
+        assertEquals(result, fibonacci(index));
 
 
         MathUtils mathUtils3 = new MathUtils(89, 12);
         result = mathUtils3.getResult();
         index = mathUtils3.getIndex();
-        Assertions.assertEquals(result, fibonacci(index));
-
+        assertEquals(result, fibonacci(index));
 
 
 //            for (int i = 0; i < 90; i++) {
@@ -72,23 +55,17 @@ public class MathUtilsTest{
 //        {12, 89L},
 //        {13, 145L},
 //})
-// void testWithParameters(int aaaa, long bbbb) {
 
-//        index = aaaa;
-//    result = bbbb;
-//    Assertions.assertEquals(5L, 5L);
-
-//        //test code
-//    }
-
-
-//        @Disabled
-//    @Test
-//    public void testFactorial() {
-//        Assertions.assertEquals(1L, factorial(1));
-//        Assertions.assertEquals(10L, factorial(4));
-//
-//    }
-
+    @ParameterizedTest
+    @CsvSource(value = {
+            "3:5",
+            "5:6",
+            "55:11",
+            "89:12",
+            "144:13"
+    }, delimiter = ':')
+    void testFibonacci(long expected, int index) {
+        assertEquals(expected, fibonacci(index));
+    }
 
 }
