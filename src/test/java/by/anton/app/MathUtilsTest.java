@@ -32,18 +32,7 @@ public class MathUtilsTest {
         result = mathUtils3.getResult();
         index = mathUtils3.getIndex();
         assertEquals(result, fibonacci(index));
-
-
     }
-
-//@ParameterizedTest
-//@CsvSource (value = Arrays.asList(new Object[][]{
-//        {5, 3L},
-//        {6, 5L},
-//        {11, 55L},
-//        {12, 89L},
-//        {13, 145L},
-//})
 
     @ParameterizedTest
     @CsvSource(value = {
