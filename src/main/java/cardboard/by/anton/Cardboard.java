@@ -1,4 +1,4 @@
-package cardboard.by.Anton;
+package cardboard.by.anton;
 
 public class Cardboard {
 
