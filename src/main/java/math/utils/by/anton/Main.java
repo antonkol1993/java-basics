@@ -1,10 +1,7 @@
-package by.anton.app;
-
-import org.w3c.dom.ls.LSOutput;
+package math.utils.by.anton;
 
 
 import java.util.Arrays;
-import java.util.Date;
 import java.util.List;
 
 public class Main {
