@@ -21,6 +21,8 @@ class CardboardTest {
         int differenceTest = (int) (Math.pow(radiusCircle, 2) - (Math.pow(lengthCardboard, 2) + Math.pow(heightCardboard, 2)));
         boolean isCardboard = !(differenceTest >= 0);
         Assertions.assertEquals(isCardboard, cardboard.isCardboardClosed());
+//        Assertions.assertTrue(cardboard.isCardboardClosed(board, radius));
+//        Assertions.assertFalse(cardboard.isCardboardClosed(board, radius));
     }
 
 
