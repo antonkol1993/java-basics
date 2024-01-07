@@ -7,6 +7,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.MethodSource;
 
 
+import java.lang.reflect.Executable;
 import java.util.stream.Stream;
 
 import static math.utils.by.anton.MathUtils.fibonacci;
@@ -45,8 +46,6 @@ public class MathUtilsTest {
     void testFibonacci(long expected, int index) {
         assertEquals(expected, fibonacci(index));
     }
-
-
     @ParameterizedTest
     @MethodSource("provideFibonacciDataSet")
     void testFibonacciWithMethod(long expected, int index) {
@@ -60,21 +59,34 @@ public class MathUtilsTest {
         );
     }
 
-
     @ParameterizedTest
     @MethodSource("provideFactorialDataSet")
     void testFactorialMethod(int index, Long result) {
         assertEquals(result, MathUtils.factorial(index));
     }
-
     private static Stream<Arguments> provideFactorialDataSet() {
         return Stream.of(
-                Arguments.of(5, 15L),
-                Arguments.of(6, 21L),
-                Arguments.of(8, 36L),
-                Arguments.of(9, 45L),
-                Arguments.of(2, 3L)
+                Arguments.of(5, 120L),
+                Arguments.of(6, 720L),
+                Arguments.of(4, 24L),
+                Arguments.of(3, 6L),
+                Arguments.of(10, 3628800L)
         );
     }
+
+    @ParameterizedTest
+    @CsvSource (value = {
+            "5,118L",
+            "4,25L",
+            "6,320L",
+            "3,8L"
+
+    }, delimiter = ',')
+    void  testThrow (int index, long result) {
+//        Executable executable = MathUtils.factorial(index);
+        Assertions.assertThrows(RuntimeException.class, );
+    }
+
+
 
 }

@@ -68,20 +68,24 @@ public class MathUtils {
 
 
 
-    public static long factorial(int index) {
-        index += 1; // чтобы отсчет был с 1-го элемента
-        long result = 0;
-        if (index <= 1) {
-            System.out.println("Factorial can only have positive numbers ");
-            return 0;
-        } else {
-            for (int i = 0; i < index; i++) {
-                result += i;
+    public static long factorial(int indexFactorial) {
 
+        long result = 1;
+        if (indexFactorial < 1) {
+            throw new RuntimeException("Factorial has only positive numbers ! ");
+        } else {
+            for (int i = 1; i <= indexFactorial; i++) {
+                result *= i;
             }
         }
         return result;
     }
+
+    public static void main(String[] args) {
+
+        System.out.println(MathUtils.factorial(10));
+    }
+
 
 
     public static long fibonacci2(int index) {
@@ -117,9 +121,7 @@ public class MathUtils {
         }
     }
 
-    public static void main(String[] args) {
-        System.out.println(MathUtils.factorial(6));
-    }
+
 
 
 }

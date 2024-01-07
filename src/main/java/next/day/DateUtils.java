@@ -21,4 +21,11 @@ public class DateUtils {
         return result;
     }
 
+    public static void main(String[] args) {
+        DateState.of(2,3,5);
+
+        System.out.println(DateUtils.calculateNextDay(DateState.of(2,3,5)));
+
+    }
+
 }
