@@ -28,7 +28,6 @@ public class NextDay {
     public int getDay() {
         return day;
     }
-
     public int getMonth() {
         return month;
     }
@@ -49,21 +48,12 @@ public class NextDay {
         return nextYear;
     }
 
-    public int maxDay() {
+    public int maxDayOfMonth() {
         return switch (month) {
             case 2 -> isLeapYear() ? 29 : 28;
-            case 4,6,9,11 -> 30;
+            case 4, 6, 9, 11 -> 30;
             default -> 31;
         };
-
-//        return
-//
-//                //            case 1,3,5,7,8,10,12 -> 31;
-//
-//
-//
-//                (month % 2 == 1 && month < 8) ? 31 : month == 2 && isLeapYear() ?
-//                29 : month == 2 && !isLeapYear() ? 28 : month >= 8 && month % 2 == 0 ? 31 : 30;
     }
 
     public boolean isLeapYear() {
@@ -77,25 +67,26 @@ public class NextDay {
     }
 
     public void nextDate() {
-        if (maxDay() > day) {
-            nextDay = day + 1;
-            nextMonth = month;
-            nextYear = year;
-        } else {
-            if (day > maxDay() || month < 1 || month > 12) {
+        isLeapYear();
+
+            if (day < 1 || day > maxDayOfMonth() || month < 1 || month > 12 ) {
                 throw new RuntimeException("this is an unacceptable day or month");
+            } else if(maxDayOfMonth() > day) {
+                nextDay = day + 1;
+                nextMonth = month;
+                nextYear = year;
             } else {
                 nextDay = 1;
                 nextMonth = month == 12 ? 1 : month + 1;
                 nextYear = month == 12 ? year + 1 : year;
             }
-        }
+
     }
 
 
     public static void main(String[] args) {
 
-        NextDay nextDay1 = new NextDay(29, 2, 2000);
+        NextDay nextDay1 = new NextDay(1, 13, 2020);
         nextDay1.nextDate();
         nextDay1.nextDate();
         nextDay1.nextDate();
