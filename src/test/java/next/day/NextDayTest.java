@@ -49,7 +49,7 @@ class NextDayTest {
                     "1.1.2016  . 31.12.2015 . false",
 
             }, delimiter = '.')
-    void nextDayTest(int day, int month, int year, int dayToMethod, int monthToMethod, int yearToMethod, boolean isLeapYear) {
+    public void testNextDay(int day, int month, int year, int dayToMethod, int monthToMethod, int yearToMethod, boolean isLeapYear) {
         NextDay nextDay = new NextDay(dayToMethod, monthToMethod, yearToMethod);
         nextDay.nextDate();
 
@@ -61,7 +61,10 @@ class NextDayTest {
         assertEquals(year, nextDay.getNextYear(), "day checker for (%s.%s.%s)".formatted(dayToMethod, monthToMethod, yearToMethod));
     }
 
+    public void testMaxDayOfMonth() {}
 
+    public void testIsLeapYear() {}
+    public void testIsNotLeapYear() {}
 //    @ParameterizedTest
 //    @CsvSource (value = {
 //            "1.12.-2020 . 31.12.-2015", // 1v  - Year < 0 ;

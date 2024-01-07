@@ -13,7 +13,7 @@ public class DateUtils {
         int currentDay = initial.getDay();
         int currentMonth = initial.getMonth();
 
-        boolean isLeapYear = initial.getYear() % 4 == 0;
+        boolean isLeapYear = isLeapYear(initial);
         int lastDayOfMonth;
 
         DateState result = DateState.of(currentDay + 1, currentMonth, initial.getYear());
@@ -21,11 +21,11 @@ public class DateUtils {
         return result;
     }
 
-    public static void main(String[] args) {
-        DateState.of(2,3,5);
-
-        System.out.println(DateUtils.calculateNextDay(DateState.of(2,3,5)));
-
+    public static boolean isLeapYear(DateState initial) {
+        return false;
     }
 
+    public static int maxDayOfMonth(DateState initial) {
+        return 31;
+    }
 }

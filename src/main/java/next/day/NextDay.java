@@ -50,8 +50,20 @@ public class NextDay {
     }
 
     public int maxDay() {
-        return (month % 2 == 1 && month < 8) ? 31 : month == 2 && isLeapYear() ?
-                29 : month == 2 && !isLeapYear() ? 28 : month >= 8 && month % 2 == 0 ? 31 : 30;
+        return switch (month) {
+            case 2 -> isLeapYear() ? 29 : 28;
+            case 4,6,9,11 -> 30;
+            default -> 31;
+        };
+
+//        return
+//
+//                //            case 1,3,5,7,8,10,12 -> 31;
+//
+//
+//
+//                (month % 2 == 1 && month < 8) ? 31 : month == 2 && isLeapYear() ?
+//                29 : month == 2 && !isLeapYear() ? 28 : month >= 8 && month % 2 == 0 ? 31 : 30;
     }
 
     public boolean isLeapYear() {

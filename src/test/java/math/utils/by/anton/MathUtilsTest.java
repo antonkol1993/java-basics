@@ -82,9 +82,11 @@ public class MathUtilsTest {
             "3,8L"
 
     }, delimiter = ',')
-    void  testThrow (int index, long result) {
+    void  testThrow (int index) {
 //        Executable executable = MathUtils.factorial(index);
-        Assertions.assertThrows(RuntimeException.class, );
+        Assertions.assertThrows(RuntimeException.class, () -> {
+            //todo: write wrong function
+        });
     }
 
 
