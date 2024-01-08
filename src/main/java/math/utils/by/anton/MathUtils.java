@@ -1,7 +1,6 @@
 package math.utils.by.anton;
 
-import java.util.ArrayList;
-import java.util.List;
+
 
 public class MathUtils {
 
@@ -11,43 +10,6 @@ public class MathUtils {
     public MathUtils(long result, int index) {
         this.result = result;
         this.index = index;
-    }
-
-
-    static List<Long> arr = new ArrayList<>();
-
-
-    public static void fibonacciNumbersThirtyElements() {
-        for (int i = 0; i < 30; i++) {
-            if (i < 2) {
-                arr.add((long) i);
-                System.out.print(arr.get(i) + "[" + (i + 1) + "] ");
-            } else {
-                arr.add(arr.get(i - 2) + arr.get(i - 1));
-                System.out.print(arr.get(i) + "[" + (i + 1) + "] ");
-            }
-        }
-        System.out.println();
-    }
-
-
-    public static long fibonacci(int index) {
-
-
-        if (arr.isEmpty()) {
-            fibonacciNumbersThirtyElements();
-        }
-        if (arr.get(index) < 1) {
-            System.out.println("fibonacci does not have an index of 0 or lower ");
-            return 0;
-        } else {
-            System.out.println(arr.get(index - 1) + "[" + index + "] ");
-
-            return arr.get(index - 1);
-
-            //            return arr.get(index - 1);
-
-        }
     }
 
     public long getResult() {
@@ -67,13 +29,15 @@ public class MathUtils {
     }
 
 
-
     public static long factorial(int indexFactorial) {
 
         long result = 1;
-        if (indexFactorial < 1) {
+        if (indexFactorial < 0) {
             throw new RuntimeException("Factorial has only positive numbers ! ");
         } else {
+            if ( indexFactorial == 0 ) {
+                return result;
+            }
             for (int i = 1; i <= indexFactorial; i++) {
                 result *= i;
             }
@@ -82,28 +46,13 @@ public class MathUtils {
     }
 
     public static void main(String[] args) {
-
-        System.out.println(MathUtils.factorial(10));
+        System.out.println(MathUtils.factorial(0));
     }
 
 
-
-    public static long fibonacci2(int index) {
-//        if (index == 0) {
-//            return 0;
-//        } else if (index == 1) {
-//            return 1;
-//        }
-        if (index < 2) {
-            return index;
-        } else {
-            return fibonacci2(index - 2) + fibonacci2(index - 1);
-        }
-
-    }
-
-    public static long fibonacci3(int index) {
-        if (index < 2) {
+    public static long fibonacci(int index) {
+        index -= 1;
+        if (index < 3) {
             return index;
         } else {
             long a = 0;
@@ -120,8 +69,6 @@ public class MathUtils {
             return b;
         }
     }
-
-
 
 
 }
