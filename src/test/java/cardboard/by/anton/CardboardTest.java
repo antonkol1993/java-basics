@@ -1,29 +1,65 @@
 package cardboard.by.anton;
 
-import org.junit.jupiter.api.Assertions;
+
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 class CardboardTest {
 
 
     @ParameterizedTest
     @CsvSource(value = {
-            "2,3,5",
-            "4,5,-8",
-            "-1,1,2",
-            "32,22,50",
-            "0,0,0",
-
+            "1,3,5",
+            "2,5,10",
+            "10,1,20",
+            "32,22,35",
+            "5,1,8",
     })
-    void cardboardTest(int lengthCardboard, int heightCardboard, int radiusCircle) {
-        Cardboard cardboard = new Cardboard(lengthCardboard, heightCardboard, radiusCircle);
-        int differenceTest = (int) (Math.pow(radiusCircle, 2) - (Math.pow(lengthCardboard, 2) + Math.pow(heightCardboard, 2)));
-        boolean isCardboard = !(differenceTest >= 0);
-        Assertions.assertEquals(isCardboard, cardboard.isCardboardClosed());
-//        Assertions.assertTrue(cardboard.isCardboardClosed(board, radius));
-//        Assertions.assertFalse(cardboard.isCardboardClosed(board, radius));
+    public void cardboardOnBooleanFalseTest(int lengthCardboard, int heightCardboard, int radiusCircle) {
+        Cardboard.setHeightCardboard(heightCardboard);
+        Cardboard.setLengthCardboard(lengthCardboard);
+        Cardboard.setRadiusCircle(radiusCircle);
+
+        assertFalse(Cardboard.isCardboardClosed());
+
     }
+
+    @ParameterizedTest
+    @CsvSource(value = {
+            "5,3,5",
+            "4,5,6",
+            "10,1,2",
+            "25,22,25",
+            "10,1,1",
+    })
+    public void testCardboardOnBooleanTrue(int lengthCardboard, int heightCardboard, int radiusCircle) {
+        Cardboard.setHeightCardboard(heightCardboard);
+        Cardboard.setLengthCardboard(lengthCardboard);
+        Cardboard.setRadiusCircle(radiusCircle);
+
+        assertTrue(Cardboard.isCardboardClosed());
+
+    }
+
+    @ParameterizedTest
+    @CsvSource(value = {
+            "0,3,5",
+            "4,-1,6",
+            "10,1,-3",
+            "25,22,0",
+            "-5,0,0",
+    })
+    public void testExceptedExceptionToCardboard(int lengthCardboard, int heightCardboard, int radiusCircle) {
+        Cardboard.setHeightCardboard(heightCardboard);
+        Cardboard.setLengthCardboard(lengthCardboard);
+        Cardboard.setRadiusCircle(radiusCircle);
+
+        assertThrows (RuntimeException.class, Cardboard::isCardboardClosed);
+    }
+
+
 
 
 }
