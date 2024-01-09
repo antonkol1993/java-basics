@@ -2,8 +2,8 @@ package point.by.anton;
 
 public class Point {
 
-    private final int x;
-    private final int y;
+    private  int x;
+    private  int y;
 
 
     public Point() {
@@ -11,13 +11,9 @@ public class Point {
     }
 
     public Point(int x, int y) {
-//        super();
         this.x = x;
         this.y = y;
     }
-
-
-
 
     public int getX() {
         return x;
