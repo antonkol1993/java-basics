@@ -24,7 +24,7 @@ public class LineSegment extends Point implements GeometryUtils{
     }
 
 
-    public static boolean compare(LineSegment lineSegment1, LineSegment lineSegment2) {
+    public static boolean compareLines(LineSegment lineSegment1, LineSegment lineSegment2) {
         boolean inference;
         if (lineSegment1.length() < lineSegment2.length()) {
             System.out.println("Line 1 is less line 2" + " [" + lineSegment1.length() + " < " + lineSegment2.length() + " ]");
@@ -46,12 +46,20 @@ public class LineSegment extends Point implements GeometryUtils{
         return asddsa;
     }
 
+
+
+
     public static void main(String[] args) {
         LineSegment lineSegment1 = new LineSegment(1,3,-2,6);
         System.out.println(lineSegment1.length());
         LineSegment lineSegment2 = new LineSegment(5,5,2,3);
+
         System.out.println(lineSegment2.length());
-        compare(lineSegment1, lineSegment2);
+        compareLines(lineSegment1, lineSegment2);
+        LineSegment lineSegment3 = new LineSegment(new Point(2,3), new Point(4,5));
+        LineSegment lineSegment4 = new LineSegment(new Point(1,1), new Point(4,5));
+        compareLines(lineSegment2,lineSegment4);
+
 
 
 
