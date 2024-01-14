@@ -17,8 +17,8 @@ public class LineSegment extends Point implements GeometryUtils{
 
 
     public double length() {
-        int a = endPoint.getX() - startPoint.getX();
-        int b = endPoint.getY() - startPoint.getY();
+        double a = endPoint.getX() - startPoint.getX();
+        double b = endPoint.getY() - startPoint.getY();
 
         return Math.sqrt(a * a + b * b);
     }
@@ -41,7 +41,7 @@ public class LineSegment extends Point implements GeometryUtils{
 
     @Override
     public boolean linesIntersect( ) {
-        int i = 0;
+        double i = 0;
         boolean asddsa = 2 != i;
         return asddsa;
     }
