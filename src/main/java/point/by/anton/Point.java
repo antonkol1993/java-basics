@@ -2,12 +2,12 @@ package point.by.anton;
 
 public class Point {
 
-    private  double x;
-    private  double y;
+    private double x;
+    private double y;
 
 
     public Point() {
-        this(0,0);
+        this(0, 0);
     }
 
     public Point(double x, double y) {
@@ -23,4 +23,5 @@ public class Point {
         return y;
     }
 
+    //todo: equals and hashcode
 }

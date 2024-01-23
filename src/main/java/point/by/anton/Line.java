@@ -1,6 +1,6 @@
 package point.by.anton;
 
-public class Line extends Point implements GeometryUtils {
+public class Line extends Point {
 
     private Point firstPointOfLine;
     private Point secondPointOfLine;
@@ -125,7 +125,7 @@ public class Line extends Point implements GeometryUtils {
         Line line2 = new Line(-1, 4, 2, 8);
 //        Line.canonicalEquationOfTheLine(line1, line2);
 
-        System.out.println(Line.isThereAnIntersectionPoint(line1,line2));
+        System.out.println(Line.isThereAnIntersectionPoint2(line1,line2));
 
 
     }
