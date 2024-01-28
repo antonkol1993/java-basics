@@ -1,9 +1,10 @@
 package point.by.anton;
 
-public class Line3D {
+import java.util.Objects;
 
-    private Point3D startPoint;
-    private Point3D endPoint;
+public class Line3D {
+    private final Point3D startPoint;
+    private final Point3D endPoint;
 
     public Line3D(Point3D startPoint, Point3D endPoint) {
         this.startPoint = startPoint;
@@ -21,6 +22,14 @@ public class Line3D {
 
     public Point3D getEndPoint() {
         return endPoint;
+    }
+
+    @Override
+    public String toString() {
+        return "Line3D{" +
+                "startPoint=" + startPoint +
+                ", endPoint=" + endPoint +
+                '}';
     }
 
     //todo equals and hashcode

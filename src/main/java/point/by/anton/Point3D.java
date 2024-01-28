@@ -20,4 +20,7 @@ public class Point3D extends Point {
     public double getZ() {
         return z;
     }
+
+
 }
+

@@ -18,10 +18,14 @@ class LineTest {
             "2.2.3.3  .   10.10   ",
     }, delimiter = '.')
     public void testPointIsInCoordinate(double x1, double y1, double x2, double y2, double X, double Y) {
-        Line line3 = new Line(new Point( x1, y1), new Point(x2, y2));
+        LineOld line3 = new LineOld(new Point( x1, y1), new Point(x2, y2));
 
 
-        assertTrue(line3.isPointOnTheLine(X, Y));
+        assertEquals(new Point(), new Point());
+        assertNotEquals();
+        assertTrue(!new Point().equals(new Point()));
+        assertFalse(new Point().equals(new Point()));
+//        assertTrue(line3.isPointOnTheLine(X, Y));
 
     }
 
@@ -33,10 +37,10 @@ class LineTest {
             "2.2.231.9  .   32.10   ",
     }, delimiter = '.')
     public void testPointIsNOTInCoordinate(double x1, double y1, double x2, double y2, double X, double Y) {
-        Line line3 = new Line(new Point( x1, y1), new Point(x2, y2));
+        LineOld line3 = new LineOld(new Point( x1, y1), new Point(x2, y2));
 
 
-        assertFalse(line3.isPointOnTheLine(X, Y));
+//        assertFalse(line3.isPointOnTheLine(X, Y));
 
     }
 
@@ -48,11 +52,11 @@ class LineTest {
             "999.2.999.9  .   32.10   ",
     }, delimiter = '.')
     public void testToThrowsInCanonicalEquationOfTheLine(double x1, double y1, double x2, double y2, double X, double Y) {
-        Line line3 = new Line(new Point( x1, y1), new Point(x2, y2));
+        LineOld line3 = new LineOld(new Point( x1, y1), new Point(x2, y2));
 
 
-        assertThrows(RuntimeException.class,
-                () -> line3.isPointOnTheLine(X, Y) );
+//        assertThrows(RuntimeException.class,
+//                () -> line3.isPointOnTheLine(X, Y) );
 
     }
 

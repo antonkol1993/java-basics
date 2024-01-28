@@ -24,4 +24,15 @@ public class Point {
     }
 
     //todo: equals and hashcode
+
+
+    @Override
+    public String toString() {
+        return "Point{" +
+                "x=" + x +
+                ", y=" + y +
+                '}';
+    }
 }
+
+

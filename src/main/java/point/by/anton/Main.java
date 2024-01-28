@@ -12,11 +12,11 @@ public class Main {
         //        (Y2) = y1 + (y2 — y1) / (x2 — x1) * (X — x1)
         //
         //
-        Line line1 = new Line(-1, 4, 2, 8);
-        Line line2 = new Line(-1, 4, 2, 8);
+        LineOld line1 = new LineOld(-1, 4, 2, 8);
+        LineOld line2 = new LineOld(-1, 4, 2, 8);
 //        Line.canonicalEquationOfTheLine(line1, line2);
 
-        System.out.println(Line.isThereAnIntersectionPoint2(line1,line2));
+//        System.out.println(LineOld.isThereAnIntersectionPoint2(line1,line2));
 
 
 
@@ -28,11 +28,11 @@ public class Main {
 
         Point point3 = new Point(1, 1);
 
-        Line lineError = new Line(point1, point2); //error
+        LineOld lineError = new LineOld(point1, point2); //error
 
 //        Line line1 = new Line(point, point1);
 //        Line line2 = new Line(point, point2);
-        Line line3 = new Line(point, point3);
+        LineOld line3 = new LineOld(point, point3);
 
         line1.equals(line2); // -> true
         line1.equals(line3); // -> true
@@ -45,5 +45,15 @@ public class Main {
         double y = line3D.getStartPoint().getY();
         double z = line3D.getStartPoint().getZ();
 
+
+        Line line = new Line(point, point1);
+        Point point4 = line.startPoint();
+        Point point5 = line.endPoint();
+        System.out.printf(line.toString());
+
+
+
+        Geometry geometry = new Geometry();
+        geometry.intersectionLinesFormula(line1, line2);
     }
 }
