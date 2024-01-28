@@ -30,8 +30,8 @@ public class Main {
 
         Line lineError = new Line(point1, point2); //error
 
-        Line line1 = new Line(point, point1);
-        Line line2 = new Line(point, point2);
+//        Line line1 = new Line(point, point1);
+//        Line line2 = new Line(point, point2);
         Line line3 = new Line(point, point3);
 
         line1.equals(line2); // -> true

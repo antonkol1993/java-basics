@@ -1,6 +1,6 @@
 package point.by.anton;
 
-public class LineSegment extends Point implements GeometryUtils{
+public class LineSegment {
 
     private Point startPoint;
     private Point endPoint;
@@ -39,12 +39,7 @@ public class LineSegment extends Point implements GeometryUtils{
         return inference;
     }
 
-    @Override
-    public boolean linesIntersect( ) {
-        double i = 0;
-        boolean asddsa = 2 != i;
-        return asddsa;
-    }
+
 
 
 
