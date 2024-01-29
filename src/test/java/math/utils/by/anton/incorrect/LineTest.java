@@ -1,7 +1,9 @@
-package point.by.anton.incorrect;
+package math.utils.by.anton.incorrect;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+import point.by.anton.incorrect.LineOld;
+import point.by.anton.incorrect.Point;
 
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -22,7 +24,7 @@ class LineTest {
 
 
         assertEquals(new Point(), new Point());
-        assertNotEquals();
+//        assertNotEquals();
         assertTrue(!new Point().equals(new Point()));
         assertFalse(new Point().equals(new Point()));
 //        assertTrue(line3.isPointOnTheLine(X, Y));

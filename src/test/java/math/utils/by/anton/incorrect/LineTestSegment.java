@@ -1,4 +1,4 @@
-package point.by.anton.incorrect;
+package math.utils.by.anton.incorrect;
 
 class LineTestSegment {
 //    @ParameterizedTest
