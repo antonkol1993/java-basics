@@ -52,8 +52,5 @@ public class Main {
         System.out.printf(line.toString());
 
 
-
-        Geometry geometry = new Geometry();
-        geometry.intersectionLinesFormula(line1, line2);
     }
 }
