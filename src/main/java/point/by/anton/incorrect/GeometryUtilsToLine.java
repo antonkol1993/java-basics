@@ -1,4 +1,4 @@
-package point.by.anton;
+package point.by.anton.incorrect;
 
 public class GeometryUtilsToLine {
     public GeometryUtilsToLine(double x, double y) {

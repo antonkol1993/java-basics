@@ -1,6 +1,4 @@
-package point.by.anton;
-
-import java.util.Objects;
+package point.by.anton.incorrect;
 
 public class Line3D {
     private final Point3D startPoint;

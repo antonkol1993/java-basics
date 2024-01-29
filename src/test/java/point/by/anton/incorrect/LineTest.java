@@ -1,4 +1,4 @@
-package point.by.anton;
+package point.by.anton.incorrect;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
