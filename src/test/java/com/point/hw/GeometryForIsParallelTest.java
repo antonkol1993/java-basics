@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-public class GeometryTest {
+public class GeometryForIsParallelTest {
     @ParameterizedTest
     @CsvSource(value = {
             "2/5/4/7            / 2/5/6/9",
