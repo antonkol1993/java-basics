@@ -4,15 +4,14 @@ public class Main {
 
     public static void main(String[] args) {
         Geometry geometry = new Geometry();
-        Line line1 = new Line(new Point(5, 5), new Point(4, 2));
-        Line line2 = new Line(new Point(-10, -6), new Point(-9, 5));
+        Line line1 = new Line(new Point(5, 5), new Point(6, 6));
+        Line line2 = new Line(new Point(5, 5), new Point(8, 8));
+        Line line3 = new Line(new Point(5, 6), new Point(7, 8));
+        Line line4 = new Line(new Point(0, 2), new Point(2, 4));
+//        Line line2 = new Line(new Point(4, 4), new Point(8, 8));
+        Point point = new Point(111, 112);
+        System.out.println(geometry.contains(line3, point));
 
-        System.out.println(geometry.crossPoint(line2, line1));
-
-
-        Point point = new Point(-14.25, -52.75);
-        System.out.println(point.equals(geometry.crossPoint(line1,line2)));
-        System.out.println(point);
 
 //        Point parallel = geometry.isParallel(null, null);
     }
