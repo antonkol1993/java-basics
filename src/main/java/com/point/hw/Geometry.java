@@ -26,7 +26,7 @@ public class Geometry {
      * @param line
      * @return double
      */
-    private double K(Line line) {
+    public double K(Line line) {
 
         validateLine(line);
 
@@ -42,7 +42,7 @@ public class Geometry {
      * @param line
      * @return double
      */
-    private double B(Line line) {
+    public double B(Line line) {
 
         validateLine(line);
         return (line.getStartPoint().getY() - (K(line) * line.getStartPoint().getX()));
@@ -108,6 +108,7 @@ public class Geometry {
 
     //todo: если сделал все остальное
     public boolean contains(Line line, Point point) {
+
         return false;
     }
 }
