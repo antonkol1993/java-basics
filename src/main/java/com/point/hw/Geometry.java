@@ -107,8 +107,14 @@ public class Geometry {
 
 
     //todo: если сделал все остальное
-    public boolean contains(Line line, Point point) {
 
-        return false;
+    /**
+     * If {@link Point y} = {@link Geometry K} * {@link Point x} + {@link Geometry B} then this point is on this line.
+     * @param line
+     * @param point
+     * @return boolean
+     */
+    public boolean contains(Line line, Point point) {
+        return K(line) * point.getX() + B(line) == point.getY();
     }
 }
