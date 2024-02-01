@@ -40,7 +40,7 @@ public class GeometryForCrossPointTest {
             "2/4/5/7            / -2/-4/-3/-3  / -4/-2",
             "5/5/4/2          / -10/-6/-9/5 / -14.25 /-52.75"
     }, delimiter = '/')
-    void isParallelForNullTestNo2(double x1, double y1, double x2, double y2,
+    void isParallelForAssertTestNo3(double x1, double y1, double x2, double y2,
                                   double b1, double c1, double b2, double c2,
                                   double expectX,double expectY) {
         Point expectPoint = new Point(expectX, expectY);
