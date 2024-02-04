@@ -1,14 +1,26 @@
 package papa.Doner;
 
-import papa.Doner.Ingridients.Sauces;
-import papa.Doner.doners.DonerChicken.DonerChicken;
+import papa.Doner.doners.DonerRaffleTasty;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        DonerChicken donerChicken = new DonerChicken();
-        System.out.println();
+
+        DonerRaffleTasty donerRaffleTasty = new DonerRaffleTasty();
+
+
+        System.out.println(donerRaffleTasty.getServingQuantity().getQuantityMarbleBif());
+        System.out.println(donerRaffleTasty.getServingQuantity().getQuantityTomato());
+        System.out.println(donerRaffleTasty.getServingQuantity().getQuantityPickledCucumber());
+        System.out.println(donerRaffleTasty.getServingQuantity().getQuantityChineseCabbage());
+        System.out.println(donerRaffleTasty.getServingQuantity().getQuantityMarbleBif());
+        System.out.println(donerRaffleTasty.getServingQuantity().getQuantityTastySauce());
+
+
+
+
+
 
     }
 }
