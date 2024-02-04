@@ -1,4 +1,4 @@
-package papa.Doner.doners.DonerChicken;
+package papa.Doner.doners;
 
 import papa.Doner.Ingridients.IngredientsInDoner;
 import papa.Doner.Ingridients.Sauces;
