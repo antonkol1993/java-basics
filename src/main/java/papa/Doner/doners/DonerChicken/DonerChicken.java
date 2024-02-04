@@ -2,19 +2,31 @@ package papa.Doner.doners.DonerChicken;
 
 import papa.Doner.Ingridients.IngredientsInDoner;
 import papa.Doner.Ingridients.Sauces;
-import papa.Doner.ShawarmaStandart;
+import papa.Doner.ServingQuantity;
+import papa.Doner.ShawarmaStandard;
 
-public class DonerChicken extends ShawarmaStandart {
+public class DonerChicken extends ShawarmaStandard {
     private IngredientsInDoner freshCabbage;
     private IngredientsInDoner tomato;
     private IngredientsInDoner pickledCucumber;
     private Sauces redSauce;
+    private ServingQuantity servingQuantity;
 
     public DonerChicken() {
+        super();
+        this.servingQuantity = super.getServingQuantity();
+
         freshCabbage = IngredientsInDoner.FRESH_CABBAGE;
+        servingQuantity.setQuantityFreshCabbage(1);
+
         tomato = IngredientsInDoner.TOMATO;
+        servingQuantity.setQuantityTomato(1);
+
         pickledCucumber = IngredientsInDoner.PICKLED_CUCUMBER;
+        servingQuantity.setQuantityPickledCucumber(1);
+
         redSauce = Sauces.RED_SAUCE;
+        servingQuantity.setQuantityRedSauce(1);
     }
 
 
@@ -48,5 +60,15 @@ public class DonerChicken extends ShawarmaStandart {
 
     public void setRedSauce(Sauces redSauce) {
         this.redSauce = redSauce;
+    }
+
+    @Override
+    public ServingQuantity getServingQuantity() {
+        return servingQuantity;
+    }
+
+    @Override
+    public void setServingQuantity(ServingQuantity servingQuantity) {
+        this.servingQuantity = servingQuantity;
     }
 }
