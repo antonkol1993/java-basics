@@ -1,4 +1,4 @@
-package papa.Doner.cost_and_weight;
+package papa.Doner.cost_and_weight.price;
 
 public class CostIngredients {
     private double costFlatbread = 1;
