@@ -14,8 +14,25 @@ public class DonerChicken extends ShawarmaStandard {
     private ServingQuantity servingQuantity;
     private TotalCost totalCost;
 
-    public DonerChicken() {
+    public DonerChicken(int size) {
         super();
+        if (size == 1) {
+            totalCost = new TotalCost();
+            totalCost.setDonerChickenCost(5.9);
+        } if (size == 2) {
+            totalCost = new TotalCost();
+            totalCost.setDonerChickenCost(7.5);
+        } if (size == 3) {
+            totalCost = new TotalCost();
+            totalCost.setDonerChickenCost(9.5);
+        } if (size == 4) {
+            totalCost = new TotalCost();
+            totalCost.setDonerChickenCost(10.5);
+        } else {
+                totalCost = new TotalCost();
+                totalCost.setDonerChickenCost(7.5);
+        }
+
         this.servingQuantity = super.getServingQuantity();
 
         freshCabbage = IngredientsInDoner.FRESH_CABBAGE;
