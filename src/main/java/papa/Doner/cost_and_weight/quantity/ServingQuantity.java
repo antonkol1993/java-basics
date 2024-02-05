@@ -1,4 +1,4 @@
-package papa.Doner;
+package papa.Doner.cost_and_weight.quantity;
 
 public class ServingQuantity {
     private int quantityFlatbread;

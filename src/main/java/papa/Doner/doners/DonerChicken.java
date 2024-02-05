@@ -2,7 +2,7 @@ package papa.Doner.doners;
 
 import papa.Doner.Ingridients.IngredientsInDoner;
 import papa.Doner.Ingridients.Sauces;
-import papa.Doner.ServingQuantity;
+import papa.Doner.cost_and_weight.quantity.ServingQuantity;
 import papa.Doner.ShawarmaStandard;
 import papa.Doner.cost_and_weight.price.TotalCost;
 import papa.Doner.cost_and_weight.weight.TotalWeight;
