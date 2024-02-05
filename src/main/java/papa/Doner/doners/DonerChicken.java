@@ -5,6 +5,7 @@ import papa.Doner.Ingridients.Sauces;
 import papa.Doner.ServingQuantity;
 import papa.Doner.ShawarmaStandard;
 import papa.Doner.cost_and_weight.price.TotalCost;
+import papa.Doner.cost_and_weight.weight.TotalWeight;
 
 public class DonerChicken extends ShawarmaStandard {
     private IngredientsInDoner freshCabbage;
@@ -13,24 +14,36 @@ public class DonerChicken extends ShawarmaStandard {
     private Sauces redSauce;
     private ServingQuantity servingQuantity;
     private TotalCost totalCost;
+    private TotalWeight totalWeight;
 
     public DonerChicken(int size) {
         super();
         if (size == 1) {
             totalCost = new TotalCost();
             totalCost.setDonerChickenCost(5.9);
-        } if (size == 2) {
+            totalWeight = new TotalWeight();
+            totalWeight.setDonerChickenWeight(300);
+
+        } else if (size == 2) {
             totalCost = new TotalCost();
             totalCost.setDonerChickenCost(7.5);
-        } if (size == 3) {
+            totalWeight = new TotalWeight();
+            totalWeight.setDonerChickenWeight(400);
+        } else if (size == 3) {
             totalCost = new TotalCost();
             totalCost.setDonerChickenCost(9.5);
-        } if (size == 4) {
+            totalWeight = new TotalWeight();
+            totalWeight.setDonerChickenWeight(550);
+        } else if (size == 4) {
             totalCost = new TotalCost();
             totalCost.setDonerChickenCost(10.5);
+            totalWeight = new TotalWeight();
+            totalWeight.setDonerChickenWeight(650);
         } else {
-                totalCost = new TotalCost();
-                totalCost.setDonerChickenCost(7.5);
+            totalCost = new TotalCost();
+            totalCost.setDonerChickenCost(7.5);
+            totalWeight = new TotalWeight();
+            totalWeight.setDonerChickenWeight(400);
         }
 
         this.servingQuantity = super.getServingQuantity();
@@ -48,6 +61,21 @@ public class DonerChicken extends ShawarmaStandard {
         servingQuantity.setQuantityRedSauce(1);
     }
 
+    public TotalCost getTotalCost() {
+        return totalCost;
+    }
+
+    public void setTotalCost(TotalCost totalCost) {
+        this.totalCost = totalCost;
+    }
+
+    public TotalWeight getTotalWeight() {
+        return totalWeight;
+    }
+
+    public void setTotalWeight(TotalWeight totalWeight) {
+        this.totalWeight = totalWeight;
+    }
 
     public IngredientsInDoner getFreshCabbage() {
         return freshCabbage;
