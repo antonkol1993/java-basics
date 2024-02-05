@@ -4,6 +4,7 @@ import papa.Doner.Ingridients.IngredientsInDoner;
 import papa.Doner.Ingridients.Sauces;
 import papa.Doner.ServingQuantity;
 import papa.Doner.ShawarmaStandard;
+import papa.Doner.cost_and_weight.price.TotalCost;
 
 public class DonerChicken extends ShawarmaStandard {
     private IngredientsInDoner freshCabbage;
@@ -11,6 +12,7 @@ public class DonerChicken extends ShawarmaStandard {
     private IngredientsInDoner pickledCucumber;
     private Sauces redSauce;
     private ServingQuantity servingQuantity;
+    private TotalCost totalCost;
 
     public DonerChicken() {
         super();
