@@ -18,6 +18,8 @@ public enum Ingredients {
     HAM, // ветчина
     REGULAR_CHEESE,  // сыр обычный
     MUSHROOMS, // грибы
-    BRISKET //  грудинка
+    BRISKET, //  грудинка
+
+    ONION
 
 }
