@@ -5,10 +5,21 @@ import newDoner.papa.ingridients.Sauces;
 
 public class Filters {
 
+    private static boolean instanceOfDoner(Object object) {
+        return object instanceof Doner;
+    }
 
-    public static boolean ingredientFilter(Doner object, Ingredients ingredient) {
-        if (object instanceof Doner obj1) {
+    public static boolean ingredientFilter(Object object, Ingredients ingredient) {
+        if (instanceOfDoner(object)) {
+            Doner obj1 = (Doner) object;
+            for (int i = 0; i < obj1.getIngredients().size(); i++) {
 
+                if (obj1.getIngredients().get(i) == ingredient) {
+                    return true;
+                }
+            }
+        } else {
+            Pizza obj1 = (Pizza) object;
             for (int i = 0; i < obj1.getIngredients().size(); i++) {
 
                 if (obj1.getIngredients().get(i) == ingredient) {
