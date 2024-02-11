@@ -2,7 +2,11 @@ package com.point.hw;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.MethodSource;
+
+import java.util.stream.Stream;
 
 public class GeometryForCrossPointTest {
 
@@ -51,5 +55,25 @@ public class GeometryForCrossPointTest {
     }
 
 
+    @ParameterizedTest
+    @MethodSource("provideDataSet")
+    void isParallelForAssertTestNo4(Line line1, Line line2, Point expectedPoint) {
+        Assertions.assertEquals(expectedPoint, new Geometry().crossPoint(line1, line2));
+    }
+
+    private static Stream<Arguments> provideDataSet() {
+        return Stream.of(
+                Arguments.of(
+                        new Line(new Point(2, 4), new Point(5, 7)),
+                        new Line(new Point(-2, -4), new Point(-3, -3)),
+                        new Point(-4, -2)),
+
+                Arguments.of(
+                        new Line(new Point(5, 5), new Point(4, 2)),
+                        new Line(new Point(-10, -6), new Point(-9, 5)),
+                        new Point(-14.25, -52.75))
+
+        );
+    }
 
 }

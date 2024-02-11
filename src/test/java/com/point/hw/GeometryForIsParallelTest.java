@@ -12,7 +12,7 @@ public class GeometryForIsParallelTest {
             "12.5 /5.5/14.5/7.5 / 14.5 /5.5/18.5/9.5"
 
     }, delimiter = '/')
-    void isParallelForTrueTestNo1(double x1, double y1, double x2, double y2,
+    void testIsParallelWithTrueResult(double x1, double y1, double x2, double y2,
                                   double b1, double c1, double b2, double c2) {
         Geometry geometry = new Geometry();
         Line line1 = new Line(new Point(x1, y1), new Point(x2, y2));
@@ -28,7 +28,7 @@ public class GeometryForIsParallelTest {
             "12.5 /5.5/14.5/7.5 / 14.5 /5.0/18.5/9.5"
 
     }, delimiter = '/')
-    void isParallelForFalseTestNo2(double x1, double y1, double x2, double y2,
+    void testIsParallelWithFalseResult(double x1, double y1, double x2, double y2,
                                    double b1, double c1, double b2, double c2) {
         Geometry geometry = new Geometry();
         Line line1 = new Line(new Point(x1, y1), new Point(x2, y2));
@@ -44,7 +44,7 @@ public class GeometryForIsParallelTest {
             "0/ 0/ 1/ 2         / 0 / 0/ 0/ 0"
 
     }, delimiter = '/')
-    void isParallelForFalseTestNo3(double x1, double y1, double x2, double y2,
+    void testIsParallelWithException(double x1, double y1, double x2, double y2,
                                    double b1, double c1, double b2, double c2) {
         Geometry geometry = new Geometry();
         Line line1 = new Line(new Point(x1, y1), new Point(x2, y2));
