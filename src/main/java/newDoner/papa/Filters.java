@@ -3,16 +3,13 @@ package newDoner.papa;
 import newDoner.papa.ingridients.Ingredients;
 import newDoner.papa.ingridients.Sauces;
 
-import java.util.Arrays;
-import java.util.List;
-
 public class Filters {
 
     private static boolean instanceOfDoner(Object object) {
         return object instanceof Doner;
     }
 
-    public static boolean ingredientFilter(Food food, Ingredients... ingredients) {
+    public static boolean ingredientFilter(ComplexFood complexFood, Ingredients... ingredients) {
 
 //        return food.getIngredients().stream()
 //                .anyMatch(i -> Arrays.asList(ingredients).contains(i));
@@ -21,8 +18,8 @@ public class Filters {
 
         for (int j = 0; j < ingredients.length; j++) {
             boolean hasIngredient = false;
-            for (int i = 0; i < food.getIngredients().size() && !hasIngredient; i++) {
-                if (food.getIngredients().get(i).equals(ingredients[j])) {
+            for (int i = 0; i < complexFood.getIngredients().size() && !hasIngredient; i++) {
+                if (complexFood.getIngredients().get(i).equals(ingredients[j])) {
                     hasIngredient = true;
                 }
             }

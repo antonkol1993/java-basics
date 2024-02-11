@@ -118,7 +118,7 @@ public class FoodUtils {
         return List.of();
     }
 
-    public static List<? extends AbstractFood> allFoodList() {
+    public static List<? extends ComplexFood> allComplexFoodList() {
         return allDonerList;
     }
 }

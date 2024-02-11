@@ -9,7 +9,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import static newDoner.papa.ingridients.Ingredients.*;
-import static newDoner.papa.ingridients.Sauces.*;
 
 
 public class Main {
@@ -66,6 +65,10 @@ public class Main {
         System.out.println(collect);
 
 
+        List<Object> list; // equals
+
+        List<ComplexFood> complexFoodList = List.of();
+        List<Ingredients> ingredients = complexFoodList.get(0).getIngredients();
     }
 
 

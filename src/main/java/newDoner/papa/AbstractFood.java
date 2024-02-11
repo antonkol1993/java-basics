@@ -4,7 +4,7 @@ import newDoner.papa.ingridients.Ingredients;
 
 import java.util.List;
 
-public abstract class AbstractFood implements Food {
+public abstract class AbstractFood implements ComplexFood {
 
     private String name;
     private List<Ingredients> ingredients;
