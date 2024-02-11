@@ -2,8 +2,8 @@ package com.point.hw;
 
 public class Line {
 
-    private Point startPoint;
-    private Point endPoint;
+    private final Point startPoint;
+    private final Point endPoint;
 
     public Line(double x1, double y1, double x2, double y2) {
         this.startPoint = new Point(x1, y1);
@@ -15,16 +15,15 @@ public class Line {
         this.endPoint = endPoint;
     }
 
-
     @Override
     public boolean equals(Object o) {
-        Geometry geometry = new Geometry();
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        Line comeLine = (Line) o;
-        return geometry.K(this) == geometry.K(comeLine) && geometry.B(this) == geometry.B(comeLine);
+
+        Line line2 = (Line) o;
+        return new Geometry().equal(this, line2);
     }
 
     @Override

@@ -26,10 +26,7 @@ public class Geometry {
      * @param line
      * @return double
      */
-    public double K(Line line) {
-
-        validateLine(line);
-
+    private double K(Line line) {
         return (line.getEndPoint().getY() - line.getStartPoint().getY()) /
                 (line.getEndPoint().getX() - line.getStartPoint().getX());
     }
@@ -42,11 +39,22 @@ public class Geometry {
      * @param line
      * @return double
      */
-    public double B(Line line) {
-
-        validateLine(line);
+    private double B(Line line) {
         return (line.getStartPoint().getY() - (K(line) * line.getStartPoint().getX()));
     }
+
+    /**
+     *
+     * @param line1
+     * @param line2
+     * @return boolean
+     */
+    public boolean equal(Line line1, Line line2) {
+        validateLine(line1);
+        validateLine(line2);
+        return K(line1) == K(line2) && B(line1) == B(line2);
+    }
+
 
     /**
      * This method defines parallel two lines.
@@ -94,12 +102,24 @@ public class Geometry {
      * @return Point value
      */
     public Point crossPoint(Line line1, Line line2) {
+        validateLine(line1);
+        validateLine(line2);
 
-        if (B(line1) == B(line2) && K(line1) == K(line2)) {
-            throw new RuntimeException("These lines have infinitely many points of intersection");
-        } else if (K(line1) == K(line2) && B(line1) != B(line2)) {
-            return null;
-        } double x = (B(line2) - B(line1)) / (K(line1) - K(line2));
+        // ----
+        if (K(line1) == K(line2)) {
+            if (B(line1) == B(line2)) {
+                throw new RuntimeException("These lines have infinitely many points of intersection");
+            } else {
+                return null;
+            }
+        }
+
+//        if (_equal(line1, line2)) {
+//            throw new RuntimeException("These lines have infinitely many points of intersection");
+//        } else if (_isParallel(line1, line2)) {
+//            return null;
+//        }
+        double x = (B(line2) - B(line1)) / (K(line1) - K(line2));
         double y = K(line2) * x + B(line2);
         // System.out.println("x = " + x + ";  y = " + y );
         return new Point(x,y);

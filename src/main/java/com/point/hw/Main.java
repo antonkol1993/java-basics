@@ -14,5 +14,10 @@ public class Main {
 
 
 //        Point parallel = geometry.isParallel(null, null);
+
+        Point point1 = new Point(5, 5);
+        Point point2 = new Point(6, 6);
+
+        Line line = new Line(point1, point2);
     }
 }
