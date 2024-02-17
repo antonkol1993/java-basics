@@ -1,21 +1,20 @@
 package newDoner.papa;
 
+import newDoner.papa.complex.food.Burgers;
 import newDoner.papa.complex.food.ComplexFood;
 import newDoner.papa.complex.food.Doner;
 import newDoner.papa.complex.food.Pizza;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import static newDoner.papa.ingridients.Ingredients.*;
-import static newDoner.papa.ingridients.Ingredients.MUSHROOMS;
-import static newDoner.papa.ingridients.Ingredients.REGULAR_CHEESE;
-import static newDoner.papa.ingridients.Sauces.BARBECUE_SAUCE;
-import static newDoner.papa.ingridients.Sauces.COWBERRY_SAUCE;
-import static newDoner.papa.ingridients.Sauces.GARLIC_SAUCE;
-import static newDoner.papa.ingridients.Sauces.RED_SAUCE;
-import static newDoner.papa.ingridients.Sauces.SECRET_SAUCE;
-import static newDoner.papa.ingridients.Sauces.TASTY_SAUCE;
-import static newDoner.papa.ingridients.Sauces.TERIYAKI_SAUCE;
+import static newDoner.papa.PizzaSize.PizzaSize.*;
+import static newDoner.papa.PizzaSize.PizzaSize.BIG;
+import static newDoner.papa.complex.food.ingridients.Ingredients.*;
+import static newDoner.papa.complex.food.ingridients.Ingredients.MUSHROOMS;
+import static newDoner.papa.complex.food.ingridients.Ingredients.REGULAR_CHEESE;
+import static newDoner.papa.complex.food.ingridients.Sauces.*;
+import static newDoner.papa.complex.food.ingridients.Sauces.SWEET_MUSTARD_SAUCE;
 
 public class FoodUtils {
 
@@ -114,17 +113,121 @@ public class FoodUtils {
         );
     }
 
+    private static final List<Burgers> allBurgerList;
+
+    static {
+        Burgers cheeseburgerGrill = new Burgers(
+                "cheeseburgerGrill",
+                List.of(BULK, BEEF_CUTLETE, CHEESE_CHEDDAR, BRISKET, PICKLED_CUCUMBER),
+                List.of(GRILL_SAUCE),
+                true,
+                17.90
+        );
+
+        Burgers doubleCheeseburgerGrill = new Burgers(
+                "doubleCheeseburgerGrill",
+                List.of(BULK, BEEF_CUTLETE, CHEESE_CHEDDAR, BRISKET, PICKLED_CUCUMBER),
+                List.of(GRILL_SAUCE),
+                false,
+                19.5
+        );
+
+        Burgers cheeseburgerClassic = new Burgers(
+                "cheeseburgerClassic",
+                List.of(BULK, BEEF_CUTLETE, CHEESE_CHEDDAR, PICKLED_CUCUMBER, ONION),
+                List.of(KETCHUP, SWEET_MUSTARD_SAUCE),
+                false,
+                12.5
+        );
+        Burgers doublecheeseburgerClassic = new Burgers(
+                "doublecheeseburgerClassic",
+                List.of(BULK, BEEF_CUTLETE, CHEESE_CHEDDAR, BRISKET, PICKLED_CUCUMBER),
+                List.of(KETCHUP, SWEET_MUSTARD_SAUCE),
+                true,
+                21.9
+        );
+
+        allBurgerList = List.of(
+                cheeseburgerGrill,
+                doubleCheeseburgerGrill,
+                cheeseburgerClassic,
+                doublecheeseburgerClassic);
+    }
+
+    private static List<Pizza> pizzaList;
+
+    static {
+        Pizza tunaWithThousandIslands = new Pizza(
+                "tunaWithThousandIslands",
+                List.of(TUNA, OLIVES, MOZZARELLA_CHEESE, BASIL, LEMON),
+                List.of(THOUSAND_ISLANDS_SAUCE),
+                BIG,
+                31.9
+        );
+
+        Pizza shrimpsPineappleCorn = new Pizza(
+                "shrimpsPineappleCorn",
+                List.of(SHRIMPS, PINEAPPLE, CORN, MOZZARELLA_CHEESE, BASIL),
+                List.of(THOUSAND_ISLANDS_SAUCE),
+                STANDARD,
+                28.9
+        );
+
+        Pizza hamBrisketSausages = new Pizza(
+                "hamBrisketSausages",
+                List.of(HUNTING_SAUSAGES, BRISKET, HAM, MOZZARELLA_CHEESE, BASIL),
+                List.of(THOUSAND_ISLANDS_SAUCE),
+                HALF_A_PIZZA,
+                14.5
+        );
+        Pizza mushroomsAndSausages = new Pizza(
+                "mushroomsAndSausages",
+                List.of(HUNTING_SAUSAGES, MUSHROOMS, ONION, MOZZARELLA_CHEESE, BASIL),
+                List.of(MUSHROOM_SAUCE),
+                BIG,
+                28.9
+        );
+        Pizza bbqWithOnion = new Pizza(
+                "bbqWithOnion",
+                List.of(HUNTING_SAUSAGES, BRISKET, PICKLED_CUCUMBER, ONION, MOZZARELLA_CHEESE, BASIL),
+                List.of(SWEET_MUSTARD_SAUCE, BARBECUE_SAUCE),
+                BIG,
+                31.9
+        );
+        pizzaList = List.of(
+                tunaWithThousandIslands,
+                shrimpsPineappleCorn,
+                hamBrisketSausages,
+                mushroomsAndSausages,
+                bbqWithOnion
+        );
+
+    }
+
+    private static List <List> complexFood = List.of(
+                allDonerList,
+                allBurgerList,
+                pizzaList
+
+        );
+
+
+
 
 
     public static List<Doner> allDonerList() {
         return allDonerList;
     }
 
-    public static List<Pizza> allPizzaList() {
-        return List.of();
+    public static List<Burgers> allBurgerList() {
+        return allBurgerList;
     }
 
-    public static List<? extends ComplexFood> allComplexFoodList() {
-        return allDonerList;
+    public static List<Pizza> allPizzaList() {
+        return pizzaList;
+    }
+
+    public static List<List> allComplexFoodList() {
+        return complexFood;
     }
 }

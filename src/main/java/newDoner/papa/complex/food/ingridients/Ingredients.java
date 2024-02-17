@@ -1,4 +1,4 @@
-package newDoner.papa.ingridients;
+package newDoner.papa.complex.food.ingridients;
 
 public enum Ingredients {
 
@@ -27,11 +27,25 @@ public enum Ingredients {
     BASIL, // базилик
     ONION,   // лук
     PEPPERONI, // ПЕППЕРОНИ
+    TUNA, // ТУНЕЦ
+    OLIVES, // ОЛИВКИ
+    MOZZARELLA_CHEESE,  // МОЦАРЕЛЛА
+    LEMON, // ЛИМОН
+
+    SHRIMPS, // КРЕВЕТКИ
+    PINEAPPLE, // АНАНАС
+    CORN, // КУКУРУЗА
+    HUNTING_SAUSAGES, // ОХОТНИЧЬИ КОЛБАСКИ
+
 
     /**
      * Burgers
      */
 
     COUNTRY_FRIES, // Картофель по-деревнски
+    BULK, // БУЛКА
+    BEEF_CUTLETE, // КОТЛЕТА ИЗ ГОВЯДИНЫ
+    CHEESE_CHEDDAR,  // СЫР ЧЕДДЕР
+
 
 }

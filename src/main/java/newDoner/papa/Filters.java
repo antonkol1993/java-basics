@@ -2,8 +2,8 @@ package newDoner.papa;
 
 import newDoner.papa.complex.food.ComplexFood;
 import newDoner.papa.complex.food.Doner;
-import newDoner.papa.ingridients.Ingredients;
-import newDoner.papa.ingridients.Sauces;
+import newDoner.papa.complex.food.ingridients.Ingredients;
+import newDoner.papa.complex.food.ingridients.Sauces;
 
 public class Filters {
 

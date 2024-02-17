@@ -1,7 +1,7 @@
 package newDoner.papa.complex.food;
 
-import newDoner.papa.ingridients.Ingredients;
-import newDoner.papa.ingridients.Sauces;
+import newDoner.papa.complex.food.ingridients.Ingredients;
+import newDoner.papa.complex.food.ingridients.Sauces;
 
 import java.util.List;
 
@@ -25,13 +25,13 @@ public class Doner extends AbstractFood {
                 '}' + "\n";
     }
 
-    public Doner(String name, List<Ingredients> ingredients, String imageURL) {
-        super(name, ingredients, 9.9);
+    public Doner(String name, List<Ingredients> ingredients, List<Sauces> sauces, String imageURL) {
+        super(name, ingredients, sauces,9.9);
         this.imageURL = imageURL;
     }
 
     public Doner(String name, List<Ingredients> ingredients, List<Sauces> sauces, Integer weight, Double price, String imageURL) {
-        super(name, ingredients, price);
+        super(name, ingredients,sauces, price);
         this.sauces = sauces;
         this.weight = weight;
         this.imageURL = imageURL;

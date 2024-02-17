@@ -1,20 +1,21 @@
 package newDoner.papa;
 
 
-import newDoner.papa.ingridients.Ingredients;
+import newDoner.papa.complex.food.Pizza;
 
-import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 
-import static newDoner.papa.ingridients.Ingredients.*;
+import static newDoner.papa.PizzaSize.PizzaSize.*;
+import static newDoner.papa.complex.food.ingridients.Ingredients.*;
+import static newDoner.papa.complex.food.ingridients.Sauces.*;
 
 
 public class Main {
 
 
     public static void main(String[] args) {
+
+        System.out.println(FoodUtils.allComplexFoodList());
 
 
     }
