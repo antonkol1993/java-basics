@@ -20,6 +20,18 @@ public enum Ingredients {
     MUSHROOMS, // грибы
     BRISKET, //  грудинка
 
-    ONION
+
+    /**
+     * PIZZA INGREDIENTS
+     */
+    BASIL, // базилик
+    ONION,   // лук
+    PEPPERONI, // ПЕППЕРОНИ
+
+    /**
+     * Burgers
+     */
+
+    COUNTRY_FRIES, // Картофель по-деревнски
 
 }

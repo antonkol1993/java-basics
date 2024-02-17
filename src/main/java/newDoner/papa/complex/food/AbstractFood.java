@@ -1,4 +1,4 @@
-package newDoner.papa;
+package newDoner.papa.complex.food;
 
 import newDoner.papa.ingridients.Ingredients;
 
@@ -6,10 +6,10 @@ import java.util.List;
 
 public abstract class AbstractFood implements ComplexFood {
 
-    private String name;
-    private List<Ingredients> ingredients;
+    private final String name;
+    private final List<Ingredients> ingredients;
 
-    private double price;
+    private final double price;
 
     public AbstractFood(String name, List<Ingredients> ingredients, double price) {
         this.name = name;

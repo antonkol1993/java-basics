@@ -8,5 +8,9 @@ public enum Sauces {
     COWBERRY_SAUCE, // брусничный соус
     SECRET_SAUCE,  // секретный соус
     TERIYAKI_SAUCE, // терияки соус
+    MUSHROOM_SAUCE, // грибной соус
+    SWEET_MUSTARD_SAUCE, // СЛАДКИЙ ГОРЧИЧНЫЙ СОУС
+    PARMEGIANO_SAUCE, // пармеджано соус
+
 
 }

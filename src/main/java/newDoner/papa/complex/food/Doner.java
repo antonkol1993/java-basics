@@ -1,4 +1,4 @@
-package newDoner.papa;
+package newDoner.papa.complex.food;
 
 import newDoner.papa.ingridients.Ingredients;
 import newDoner.papa.ingridients.Sauces;
@@ -8,7 +8,7 @@ import java.util.List;
 public class Doner extends AbstractFood {
     private List<Sauces> sauces = List.of(Sauces.GARLIC_SAUCE);
     private Integer weight = 400;
-    private String imageURL;
+    private final String imageURL;
 
 //    private Map<Ingredients,Integer> ingredientsList;
 

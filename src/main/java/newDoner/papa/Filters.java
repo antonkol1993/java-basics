@@ -1,5 +1,7 @@
 package newDoner.papa;
 
+import newDoner.papa.complex.food.ComplexFood;
+import newDoner.papa.complex.food.Doner;
 import newDoner.papa.ingridients.Ingredients;
 import newDoner.papa.ingridients.Sauces;
 
@@ -29,31 +31,7 @@ public class Filters {
         }
 
         return true;
-
-//        for (int i = 0; i < food.getIngredients().size(); i++) {
-//            if (food.getIngredients().get(i) == ingredients[0]) {
-//                return true;
-//            }
-//        }
-//        return false;
     }
-
-//    public static boolean ingredientFilters2(Doner object, Ingredients ingredients1, Ingredients ingredients2) {
-//        if (object instanceof Doner obj1) {
-//
-//
-//            for (int i = 0; i < obj1.getIngredients().size(); i++) {
-//                if (object.getIngredients().get(i) == ingredients1) {
-//                    for (int j = 0; j < obj1.getIngredients().size(); j++) {
-//                        if (object.getIngredients().get(j) == ingredients2) {
-//                            return true;
-//                        }
-//                    }
-//                }
-//            }
-//        }
-//        return false;
-//    }
 
     public static boolean saucesFilter(Doner object, Sauces sauces) {
         if (object instanceof Doner obj1) {
