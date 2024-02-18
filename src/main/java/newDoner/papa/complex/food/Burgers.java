@@ -10,9 +10,7 @@ public class Burgers extends AbstractFood {
     private Ingredients countryFries;
 
 
-
-
-    public Burgers(String name, List<Ingredients> ingredients, List<Sauces> sauces, boolean countryFries, double price ) {
+    public Burgers(String name, List<Ingredients> ingredients, List<Sauces> sauces, boolean countryFries, double price) {
         super(name, ingredients, sauces, price);
 
         if (countryFries) {

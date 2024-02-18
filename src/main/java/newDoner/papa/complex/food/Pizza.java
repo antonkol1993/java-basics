@@ -30,7 +30,6 @@ public class Pizza extends AbstractFood {
     }
 
 
-
     public PizzaSize getSize() {
         return size;
     }

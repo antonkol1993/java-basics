@@ -16,5 +16,4 @@ public enum Sauces {
     THOUSAND_ISLANDS_SAUCE, // 1000 ОСТРОВОВ СОУС
 
 
-
 }

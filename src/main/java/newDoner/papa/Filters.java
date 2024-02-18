@@ -1,14 +1,11 @@
 package newDoner.papa;
 
-import newDoner.papa.complex.food.AbstractFood;
 import newDoner.papa.complex.food.ComplexFood;
 import newDoner.papa.complex.food.Doner;
 import newDoner.papa.complex.food.ingridients.Ingredients;
 import newDoner.papa.complex.food.ingridients.Sauces;
-import newDoner.papa.technique.AbstractTechnique;
 
 import java.util.List;
-import java.util.Objects;
 
 public class Filters {
 
@@ -65,7 +62,6 @@ public class Filters {
     public static boolean urlFilter(Doner object, String imageURL) {
         return imageURL.equalsIgnoreCase(object.getImageURL());
     }
-
 
 
     public static List<?> allClassInstances = List.of(

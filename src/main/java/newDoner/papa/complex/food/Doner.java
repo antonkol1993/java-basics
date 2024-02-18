@@ -26,12 +26,12 @@ public class Doner extends AbstractFood {
     }
 
     public Doner(String name, List<Ingredients> ingredients, List<Sauces> sauces, String imageURL) {
-        super(name, ingredients, sauces,9.9);
+        super(name, ingredients, sauces, 9.9);
         this.imageURL = imageURL;
     }
 
     public Doner(String name, List<Ingredients> ingredients, List<Sauces> sauces, Integer weight, Double price, String imageURL) {
-        super(name, ingredients,sauces, price);
+        super(name, ingredients, sauces, price);
         this.sauces = sauces;
         this.weight = weight;
         this.imageURL = imageURL;
