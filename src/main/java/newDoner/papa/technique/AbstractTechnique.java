@@ -3,10 +3,17 @@ package newDoner.papa.technique;
 public class AbstractTechnique {
     private final double price;
     private final int powerConsumption;
+    private final String name;
 
-    public AbstractTechnique(double price, int powerConsumption) {
+
+    public AbstractTechnique(String name, double price, int powerConsumption) {
+        this.name = name;
         this.price = price;
         this.powerConsumption = powerConsumption;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public double getPrice() {
@@ -15,5 +22,14 @@ public class AbstractTechnique {
 
     public int getPowerConsumption() {
         return powerConsumption;
+    }
+
+    @Override
+    public String toString() {
+        return "AbstractTechnique{" +
+                "price=" + price +
+                ", powerConsumption=" + powerConsumption +
+                ", name='" + name + '\'' +
+                '}';
     }
 }

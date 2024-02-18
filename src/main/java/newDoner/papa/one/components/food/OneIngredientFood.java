@@ -12,6 +12,7 @@ public class OneIngredientFood {
         this.price = price;
     }
 
+
     public String getName() {
         return name;
     }
@@ -22,5 +23,14 @@ public class OneIngredientFood {
 
     public double getPrice() {
         return price;
+    }
+
+    @Override
+    public String toString() {
+        return "OneIngredientFood{" +
+                "name='" + name + '\'' +
+                ", weight=" + weight +
+                ", price=" + price +
+                '}' + "\n";
     }
 }

@@ -2,9 +2,12 @@ package newDoner.papa.technique;
 
 public class TV extends TechniqueWithScreen{
 
-    public TV(double price, int powerConsumption, double sizeScreen, int numberOfColours) {
-        super(price, powerConsumption, sizeScreen, numberOfColours);
+    public TV(String name,double price, int powerConsumption, double sizeScreen, int numberOfColours) {
+        super(name,price, powerConsumption, sizeScreen, numberOfColours);
     }
 
-
+    @Override
+    public String toString() {
+        return super.toString() + "\n";
+    }
 }

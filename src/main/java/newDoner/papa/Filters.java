@@ -1,9 +1,14 @@
 package newDoner.papa;
 
+import newDoner.papa.complex.food.AbstractFood;
 import newDoner.papa.complex.food.ComplexFood;
 import newDoner.papa.complex.food.Doner;
 import newDoner.papa.complex.food.ingridients.Ingredients;
 import newDoner.papa.complex.food.ingridients.Sauces;
+import newDoner.papa.technique.AbstractTechnique;
+
+import java.util.List;
+import java.util.Objects;
 
 public class Filters {
 
@@ -60,6 +65,41 @@ public class Filters {
     public static boolean urlFilter(Doner object, String imageURL) {
         return imageURL.equalsIgnoreCase(object.getImageURL());
     }
+
+
+
+    public static List<?> allClassInstances = List.of(
+            TechniqueUtils.allTechniqueList(),
+            FoodUtils.allComplexFoodList(),
+            FoodUtils.alloneIngredientFoodList()
+    );
+
+
+//    public static boolean filterToAll (Object obj) {
+//
+//        if (obj instanceof AbstractTechnique) {
+//            for (int i = 0; i < TechniqueUtils.allTechniqueList().size(); i++) {
+//                if(TechniqueUtils.allTechniqueList().get(i).equals(obj)) {
+//                    return true;
+//                }
+//            }
+//        }
+//        if (obj instanceof AbstractFood){
+//            for (int i = 0; i < FoodUtils.allComplexFoodList().size(); i++) {
+//
+//                    AbstractFood that = (AbstractFood) obj;
+//
+//                if (Double.compare(FoodUtils.allComplexFoodList().get(i), that.getPrice()) != 0) return false;
+//                if (!Objects.equals(name, that.name)) return false;
+//                if (!Objects.equals(ingredients, that.ingredients)) return false;
+//                return Objects.equals(sauces, that.sauces);
+//                if(FoodUtils.allComplexFoodList().get(j).equals(obj)) {
+//                    return true;
+//                }
+//            }
+//        }
+//        return false;
+//    }
 
 
 }
