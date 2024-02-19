@@ -4,8 +4,8 @@ public class Soda extends OneIngredientFood {
 
     private final double volume;
 
-    public Soda(String name, int weight, double price, double volume) {
-        super(name, weight, price);
+    public Soda(String name, FoodType type, double price, double volume) {
+        super(name, type, price);
         this.volume = volume;
     }
 

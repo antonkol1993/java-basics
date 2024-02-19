@@ -1,14 +1,18 @@
 package newDoner.papa;
 
+import newDoner.papa.complex.food.AbstractFood;
 import newDoner.papa.complex.food.Burgers;
 import newDoner.papa.complex.food.ComplexFood;
 import newDoner.papa.complex.food.Doner;
 import newDoner.papa.complex.food.Pizza;
 import newDoner.papa.one.components.food.FrenchFries;
+import newDoner.papa.one.components.food.FrenchFriesType;
 import newDoner.papa.one.components.food.OneIngredientFood;
 import newDoner.papa.one.components.food.Snack;
 import newDoner.papa.one.components.food.Soda;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import static newDoner.papa.PizzaSize.PizzaSize.*;
@@ -214,55 +218,55 @@ public class FoodUtils {
     private static List<OneIngredientFood> oneIngredientFoodList;
 
     static {
-        FrenchFries frenchFriBig1 = new FrenchFries("frenchFriBig1", 330, 5.9);
-        FrenchFries frenchFriBig2 = new FrenchFries("frenchFriBig2", 330, 5.9);
-        FrenchFries frenchFriStandard1 = new FrenchFries("frenchFriStandard1", 220, 4.8);
-        FrenchFries frenchFriStandard2 = new FrenchFries("frenchFriStandard2", 220, 4.8);
-        FrenchFries frenchFriSmall1 = new FrenchFries("frenchFriSmall1", 110, 3.9);
-        FrenchFries frenchFriSmall2 = new FrenchFries("frenchFriSmall2", 110, 3.9);
-
-        Soda cocaColaSmall1 = new Soda("cocaColaSmall1", 500, 1.93, 0.5);
-        Soda cocaColaSmall2 = new Soda("cocaColaSmall2", 500, 1.93, 0.5);
-        Soda cocaColaMedium1 = new Soda("cocaColaMedium1", 1000, 2.8, 1.0);
-        Soda cocaColaMedium2 = new Soda("cocaColaMedium2", 1000, 2.8, 1.0);
-        Soda fantaMedium1 = new Soda("fantaMedium1", 1000, 2.8, 1.0);
-        Soda fantaMedium2 = new Soda("fantaMedium2", 1000, 2.8, 1.0);
-        Soda fantaSmall1 = new Soda("fantaSmall1", 500, 1.93, 0.5);
-        Soda fantaSmall2 = new Soda("fantaSmall2", 500, 1.93, 0.5);
-        Soda bonAquaSmall = new Soda("bonAquaSmall", 500, 1.39, 0.5);
-
-        Snack bountySmall1 = new Snack("bountySmall1", 55, 2.08);
-        Snack bountySmall2 = new Snack("bountySmall2", 55, 2.08);
-        Snack bountyTriple = new Snack("bountyTriple", 84, 3.13);
-        Snack alpenGoldCappuccino = new Snack("alpenGoldCappuccino", 85, 4.03);
-        Snack snickersSuper = new Snack("snickersSuper", 80, 3.13);
-        Snack snickersSuperInBox = new Snack("snickersSuper", 2560, 100.58);
+//        FrenchFries frenchFriBig1 = new FrenchFries(FrenchFriesType.LARGE, 5.9);
+//        FrenchFries frenchFriBig2 = new FrenchFries(FrenchFriesType.MEDIUM, 5.9);
+//        FrenchFries frenchFriStandard1 = new FrenchFries("frenchFriStandard1", 220, 4.8);
+//        FrenchFries frenchFriStandard2 = new FrenchFries("frenchFriStandard2", 220, 4.8);
+//        FrenchFries frenchFriSmall1 = new FrenchFries("frenchFriSmall1", 110, 3.9);
+//        FrenchFries frenchFriSmall2 = new FrenchFries("frenchFriSmall2", 110, 3.9);
+//
+//        Soda cocaColaSmall1 = new Soda("cocaColaSmall1", 500, 1.93, 0.5);
+//        Soda cocaColaSmall2 = new Soda("cocaColaSmall2", 500, 1.93, 0.5);
+//        Soda cocaColaMedium1 = new Soda("cocaColaMedium1", 1000, 2.8, 1.0);
+//        Soda cocaColaMedium2 = new Soda("cocaColaMedium2", 1000, 2.8, 1.0);
+//        Soda fantaMedium1 = new Soda("fantaMedium1", 1000, 2.8, 1.0);
+//        Soda fantaMedium2 = new Soda("fantaMedium2", 1000, 2.8, 1.0);
+//        Soda fantaSmall1 = new Soda("fantaSmall1", 500, 1.93, 0.5);
+//        Soda fantaSmall2 = new Soda("fantaSmall2", 500, 1.93, 0.5);
+//        Soda bonAquaSmall = new Soda("bonAquaSmall", 500, 1.39, 0.5);
+//
+//        Snack bountySmall1 = new Snack("bountySmall1", 55, 2.08);
+//        Snack bountySmall2 = new Snack("bountySmall2", 55, 2.08);
+//        Snack bountyTriple = new Snack("bountyTriple", 84, 3.13);
+//        Snack alpenGoldCappuccino = new Snack("alpenGoldCappuccino", 85, 4.03);
+//        Snack snickersSuper = new Snack("snickersSuper", 80, 3.13);
+//        Snack snickersSuperInBox = new Snack("snickersSuper", 2560, 100.58);
 
 
         oneIngredientFoodList = List.of(
-                frenchFriBig1,
-                frenchFriBig2,
-                frenchFriStandard1,
-                frenchFriStandard2,
-                frenchFriSmall1,
-                frenchFriSmall2,
-
-                cocaColaSmall1,
-                cocaColaSmall2,
-                cocaColaMedium1,
-                cocaColaMedium2,
-                fantaMedium1,
-                fantaMedium2,
-                fantaSmall1,
-                fantaSmall2,
-                bonAquaSmall,
-
-                bountySmall1,
-                bountySmall2,
-                bountyTriple,
-                alpenGoldCappuccino,
-                snickersSuper,
-                snickersSuperInBox
+//                frenchFriBig1,
+//                frenchFriBig2,
+//                frenchFriStandard1,
+//                frenchFriStandard2,
+//                frenchFriSmall1,
+//                frenchFriSmall2,
+//
+//                cocaColaSmall1,
+//                cocaColaSmall2,
+//                cocaColaMedium1,
+//                cocaColaMedium2,
+//                fantaMedium1,
+//                fantaMedium2,
+//                fantaSmall1,
+//                fantaSmall2,
+//                bonAquaSmall,
+//
+//                bountySmall1,
+//                bountySmall2,
+//                bountyTriple,
+//                alpenGoldCappuccino,
+//                snickersSuper,
+//                snickersSuperInBox
 
 
         );
@@ -270,12 +274,13 @@ public class FoodUtils {
     }
 
 
-    private static final List<List<? extends ComplexFood>> complexFood = List.of(
-            allDonerList,
-            allBurgerList,
-            pizzaList
+    private static final List<AbstractFood> complexFood = new ArrayList<>();
 
-    );
+    static {
+        complexFood.addAll(allDonerList);
+        complexFood.addAll(allBurgerList);
+        complexFood.addAll(pizzaList);
+    }
 
     private static final List<List<? extends OneIngredientFood>> alloneIngredientFoodList = List.of(
             oneIngredientFoodList
@@ -294,7 +299,7 @@ public class FoodUtils {
         return pizzaList;
     }
 
-    public static List<List<? extends ComplexFood>> allComplexFoodList() {
+    public static List<? extends ComplexFood> allComplexFoodList() {
         return complexFood;
     }
 

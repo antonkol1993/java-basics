@@ -1,14 +1,14 @@
 package newDoner.papa.one.components.food;
 
-public class OneIngredientFood {
+public abstract class OneIngredientFood {
 
     private final String name;
-    private final int weight;
+    private final FoodType foodType;
     private final double price;
 
-    public OneIngredientFood(String name, int weight, double price) {
+    public OneIngredientFood(String name, FoodType foodType, double price) {
         this.name = name;
-        this.weight = weight;
+        this.foodType = foodType;
         this.price = price;
     }
 
@@ -17,8 +17,8 @@ public class OneIngredientFood {
         return name;
     }
 
-    public int getWeight() {
-        return weight;
+    public FoodType getFoodType() {
+        return foodType;
     }
 
     public double getPrice() {
@@ -29,7 +29,7 @@ public class OneIngredientFood {
     public String toString() {
         return "OneIngredientFood{" +
                 "name='" + name + '\'' +
-                ", weight=" + weight +
+                ", foodType=" + foodType +
                 ", price=" + price +
                 '}' + "\n";
     }
