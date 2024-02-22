@@ -1,9 +1,22 @@
 package collections.map;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class ChatIssue {
+    @Override
+    public String toString() {
+        return toString();
+    }
 
+    public static void main(String[] args) {
+//        System.out.println(Arrays.toString(ChatIssue.someDialog.substring("^: ")));
+        System.out.println(ChatIssue.someDialog.split(" ").length);
+        String [] words = ChatIssue.someDialog.split(": ");
+        for (String word : words) {
+            System.out.println(word + "&&&&&&");
+        }
+    }
 
     private static String someDialog =
             """
@@ -21,5 +34,9 @@ public class ChatIssue {
     // 4 -> James Alex July Boris
     public static List<String> getTopChatter(String dialog, int users) {
         return List.of();
+    }
+
+    public static String getSomeDialog() {
+        return someDialog;
     }
 }
