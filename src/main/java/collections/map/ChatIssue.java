@@ -12,9 +12,9 @@ public class ChatIssue {
     public static void main(String[] args) {
 //        System.out.println(Arrays.toString(ChatIssue.someDialog.substring("^: ")));
         System.out.println(ChatIssue.someDialog.split(" ").length);
-        String [] words = ChatIssue.someDialog.split(": ");
+        String [] words = ChatIssue.someDialog.split("[(^A-Z)?+($: )]");
         for (String word : words) {
-            System.out.println(word + "&&&&&&");
+            System.out.print(word + "& ");
         }
     }
 
