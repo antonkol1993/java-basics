@@ -22,7 +22,8 @@ public enum Names {
     BARCELONA(SPAIN);
 
 
-    private Country country;
+    private final Country country;
+
 
     Names(Country country) {
         this.country = country;

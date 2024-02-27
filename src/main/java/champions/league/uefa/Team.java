@@ -5,17 +5,17 @@ import java.util.List;
 public class Team {
 
     private final Names name;
-    List<Calendar> calendarList;
-    private final Location location;
+    private Location location;
+    private Country country;
+    private Calendar calendar;
 
 
-    public Team(Names name, List<Calendar> calendarList, Location location) {
+    public Team(Names name) {
         this.name = name;
-        this.calendarList = calendarList;
-        this.location = location;
+        this.location = calendar.getLocation();
+        this.country = name.getCountry();
+
     }
-
-
 
     public Country getCountry() {
         return name.getCountry();
@@ -25,11 +25,21 @@ public class Team {
         return name;
     }
 
-    public List<Calendar> getCalendarList() {
-        return calendarList;
+    public Calendar getCalendarList() {
+        return calendar;
     }
 
     public Location getLocation() {
         return location;
+    }
+
+    @Override
+    public String toString() {
+        return "Team{" +
+                "name=" + name +
+                ", location=" + location +
+                ", country=" + country +
+                ", calendar=" + calendar +
+                '}';
     }
 }
