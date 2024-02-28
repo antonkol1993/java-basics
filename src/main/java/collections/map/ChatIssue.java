@@ -4,19 +4,34 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ChatIssue {
+
     @Override
     public String toString() {
+
         return toString();
     }
 
     public static void main(String[] args) {
 //        System.out.println(Arrays.toString(ChatIssue.someDialog.substring("^: ")));
-        System.out.println(ChatIssue.someDialog.split(" ").length);
-        String [] words = ChatIssue.someDialog.split("[(^A-Z)?+($: )]");
+
+        String [] words = ChatIssue.someDialog.split(":");
         for (String word : words) {
             System.out.print(word + "& ");
+
         }
+            String withoutColon = null;
+        for (int i = 0; i < words.length; i++) {
+            withoutColon += words;
+        }
+
+        String a;
+        a = withoutColon;
+        System.out.println(a);
+
+
     }
+
+
 
     private static String someDialog =
             """
