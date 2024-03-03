@@ -1,47 +1,79 @@
 package collections.map;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class ChatIssue {
 
-    @Override
-    public String toString() {
-
-        return toString();
-    }
 
     public static void main(String[] args) {
 //        System.out.println(Arrays.toString(ChatIssue.someDialog.substring("^: ")));
 
-        String [] words = ChatIssue.someDialog.split(":");
-        for (String word : words) {
-            System.out.print(word + "& ");
+        System.out.println(ChatIssue.someDialog);
+        String[] words = ChatIssue.someDialog.split("\\n");
+
+        String [] nameList= new String[words.length];
+        int [] quantityWordsInString = new int [words.length];
+
+        for (int j = 0; j<words.length; j++) {
+            String word = words[j];
+            String name = word.split(":")[0];
+
+            nameList[j] = name;
+
+            String []subString = word.split(" ");
+            int quantityWords = subString.length - 1;
+
+            quantityWordsInString[j] = quantityWords;
+
+            System.out.println(nameList[j]);
+            System.out.println(quantityWordsInString[j]);
 
         }
-            String withoutColon = null;
-        for (int i = 0; i < words.length; i++) {
-            withoutColon += words;
+           List<String> listNames;
+           List<Integer> listQuantity;
+
+        for (int i = 0; i<words.length; i++) {
+            for (int k = words.length - 1; k > i; k--) {
+                if (nameList[i].equalsIgnoreCase(nameList[k]) && nameList[i] != null) {
+                    quantityWordsInString[i] = quantityWordsInString[i] + quantityWordsInString[k];
+
+                }
+            }
         }
 
-        String a;
-        a = withoutColon;
-        System.out.println(a);
+
+        ;
+
+
+        System.out.println();
+
+        for (int j = 0; j<words.length; j++) {
+            System.out.println(nameList[j]);
+            System.out.println(quantityWordsInString[j]);
+        }
+
 
 
     }
 
+    public ChatIssue() {
+    }
 
-
-    private static String someDialog =
+    private static final String someDialog =
             """
-            Alex: Hi people
-            Boris: Hello Alex
-            July: Hi sweaty Alex
-            James: Hi Alex! How are you?
-            Alex: I am fine. And you?
-            James: Good! Thank you!
-            """;
+                    Alex: Hi people
+                    Boris: Hello Alex
+                    July: Hi sweaty Alex
+                    James: Hi Alex! How are you?
+                    Alex: I am fine. And you?
+                    James: Good! Thank you!
+                    """;
+
+
+
 
 
     // 1 -> James
