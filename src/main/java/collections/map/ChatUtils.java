@@ -3,6 +3,11 @@ package collections.map;
 
 public class ChatUtils {
 
+
+
+
+
+
     private static int stringsQuantity() {
         dialogSplit();
         return dialogSplit().length;
@@ -36,6 +41,7 @@ public class ChatUtils {
         }
         return quantityWordsInString;
     }
+
 
 
 
