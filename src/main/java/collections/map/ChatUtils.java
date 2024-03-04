@@ -1,7 +1,12 @@
 package collections.map;
 
 
+import java.util.Arrays;
+import java.util.List;
+
 public class ChatUtils {
+
+    List <ChatUtils> chatUtilsList;
 
 
 
