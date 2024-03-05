@@ -1,7 +1,6 @@
 package collections.map;
 
 
-
 public class ChatIssue {
 
 
@@ -14,9 +13,6 @@ public class ChatIssue {
                     Alex: I am fine. And you?
                     James: Good! Thank you!
                     """;
-
-
-
 
 
     // 1 -> James
