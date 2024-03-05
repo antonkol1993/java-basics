@@ -1,16 +1,11 @@
 package collections.map;
 
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class ChatUtils {
 
-    List <ChatUtils> chatUtilsList;
-
-
-
-
+    List<ChatUtils> chatUtilsList;
 
 
     private static int stringsQuantity() {
@@ -47,46 +42,29 @@ public class ChatUtils {
         return quantityWordsInString;
     }
 
+    public static Map<String, Integer> authorsList() {
+        Map<String, Integer> authorsList = new HashMap<>();
+        for (int i = 0; i < dialogSplit().length; i++) {
+            if (authorsList.containsKey(nameList()[i])) {
+                authorsList.put(nameList()[i], authorsList.get(nameList()[i]) + wordsQuantity()[i]);
+            } else authorsList.put(nameList()[i], wordsQuantity()[i]);
+        }
 
+        return authorsList;
+    }
 
+    public static Map<String, Integer> sort() {
+        Map<String, Integer> authorsList = authorsList();
 
+        Integer[] quantity = new Integer[authorsList().size()];
+        String[] name = new String[authorsList().size()];
+        for (int i = 0; i < quantity.length; i++) {
+            name[i] = authorsList.get()
+                    quantity[i] =
+        }
 
-
-
-//    public static List<String> getTopChatter(String dialog, int users) {
-//        List<String> adsadsads = null;
-//
-//        for (int i = 0; i < stringsQuantity(); i++) {
-//            Integer integrewer = 0;
-//            for (int j = stringsQuantity() - 1; j >= 0; j--) {
-//
-//
-//                    if (Objects.equals(nameList()[i], nameList()[j]) && j > i) {
-//                        integrewer += wordsQuantity()[j] + wordsQuantity()[i];
-//
-//                        wordsQuantity()[j] = 0;
-//                        nameList()[j] = "";
-//
-//                    }
-//
-//            }
-//            if (nameList()[i] != "" && wordsQuantity()[i] != 0) {
-//                adsadsads = List.of(nameList()[i], integrewer.toString()
-//                );
-//            }
-//
-//        }
-//
-//        return adsadsads;
-//    }
-
-
-    //     String[] words = ChatIssue.someDialog.split("\\n");
-
-
-//          System.out.println(nameList[j]);
-//          System.out.println(quantityWordsInString[j]);
-
+        return authorsList;
+    }
 
 
 }
