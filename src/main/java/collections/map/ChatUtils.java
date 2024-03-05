@@ -2,16 +2,10 @@ package collections.map;
 
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class ChatUtils {
 
-    List<ChatUtils> chatUtilsList;
-
-
-    private static int stringsQuantity() {
-        dialogSplit();
-        return dialogSplit().length;
-    }
 
     private static String[] dialogSplit() {
         return ChatIssue.getSomeDialog().split("\\n");
@@ -54,16 +48,13 @@ public class ChatUtils {
     }
 
     public static Map<String, Integer> sort() {
-        Map<String, Integer> authorsList = authorsList();
-
-        Integer[] quantity = new Integer[authorsList().size()];
-        String[] name = new String[authorsList().size()];
-        for (int i = 0; i < quantity.length; i++) {
-            name[i] = authorsList.get()
-                    quantity[i] =
-        }
-
-        return authorsList;
+        return authorsList().entrySet()
+                .stream()
+                .sorted(Map.Entry.comparingByValue())
+                .collect(Collectors.toMap(
+                        Map.Entry::getKey,
+                        Map.Entry::getValue,
+                        (oldValue, newValue) -> oldValue, LinkedHashMap::new));
     }
 
 

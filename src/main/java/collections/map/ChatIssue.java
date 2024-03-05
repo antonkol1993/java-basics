@@ -1,9 +1,6 @@
 package collections.map;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Stream;
+
 
 public class ChatIssue {
 
@@ -25,9 +22,9 @@ public class ChatIssue {
     // 1 -> James
     // 2 -> James Alex
     // 4 -> James Alex July Boris
-    public static List<String> getTopChatter(String dialog, int users) {
-        return List.of();
-    }
+//    public static List<String> getTopChatter(String dialog, int users) {
+//        return List.of();
+//    }
 
     public static String getSomeDialog() {
         return someDialog;
