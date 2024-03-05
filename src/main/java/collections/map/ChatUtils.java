@@ -46,7 +46,13 @@ public class ChatUtils {
             } else authorsList.put(nameList()[i], wordsQuantity()[i]);
         }
 
-        return authorsList;
+        return authorsList().entrySet()
+                .stream()
+                .sorted(Map.Entry.comparingByValue())
+                .collect(Collectors.toMap(
+                        Map.Entry::getKey,
+                        Map.Entry::getValue,
+                        (oldValue, newValue) -> oldValue, LinkedHashMap::new));
     }
 
     public static Map<String, Integer> sort() {
