@@ -6,9 +6,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-        System.out.println(Arrays.toString(ChatUtils.nameList()));
-
-        System.out.println(Arrays.toString(ChatUtils.wordsQuantity()));
+//        System.out.println(Arrays.toString(ChatUtils.nameList()));
+//
+//        System.out.println(Arrays.toString(ChatUtils.wordsQuantity()));
 //
 //        Integer [] arr;
 //        arr = ChatUtils.wordsQuantity();
@@ -18,8 +18,8 @@ public class Main {
 //            System.out.print(Arrays.toString(arr) + " ");
 
 
-        System.out.println(ChatUtils.sort());
-        System.out.println(ChatUtils.authorsList());
+//        System.out.println(ChatUtils.sort());
+//        System.out.println(ChatUtils.authorsList());
 
 
     }

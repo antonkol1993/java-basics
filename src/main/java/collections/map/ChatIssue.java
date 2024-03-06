@@ -1,6 +1,7 @@
 package collections.map;
 
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -28,41 +29,48 @@ public class ChatIssue {
         String[] lines = dialog.split("\\n");
 
         String[] namesList = new String[lines.length];
-        for (int i = 0; i < lines.length; i++) {
-            String name = lines[i].split(":")[0];
-            namesList[i] = name;
-        }
-
-
         Integer[] wordsCountList = new Integer[lines.length];
-        for (int j = 0; j < lines.length; j++) {
-
-            String[] subString = lines[j].split(" ");
-            int quantityWords = subString.length - 1;
-
-            wordsCountList[j] = quantityWords;
-        }
-
-        Map<String, Integer> authorsList = new HashMap<>();
+        Map<String, Integer> authorsMap = new HashMap<>();
         for (int i = 0; i < lines.length; i++) {
-            if (authorsList.containsKey(namesList[i])) {
-                authorsList.put(namesList[i], authorsList.get(namesList[i]) + wordsCountList[i]);
+            //name
+            String[] split = lines[i].split(":");
+            String name = split[0];
+            namesList[i] = name;
+
+            //count
+            String[] subString = split[1].trim().split(" +");
+            int quantityWords = subString.length - 1;
+            wordsCountList[i] = quantityWords;
+
+            //map
+            if (authorsMap.containsKey(namesList[i])) {
+                authorsMap.put(namesList[i], authorsMap.get(namesList[i]) + wordsCountList[i]);
             } else{
-                authorsList.put(namesList[i], wordsCountList[i]);
+                authorsMap.put(namesList[i], wordsCountList[i]);
             }
+
+
+//            authorsList.computeIfAbsent()
+
+//            authorsMap.putIfAbsent(name, quantityWords);
+//            authorsMap.computeIfPresent(name, (k, v) -> v + quantityWords);
+
+//            authorsMap.compute(name, (k, v) -> quantityWords + (v == null ? 0 : v));
         }
 
-        Map<String, Integer> collect = authorsList
+
+        Map<String, Integer> collect = authorsMap
                 .entrySet()
                 .stream()
                 .sorted(Map.Entry.comparingByValue())
+//                .limit(users)
                 .collect(Collectors.toMap(
                         Map.Entry::getKey,
                         Map.Entry::getValue,
                         (oldValue, newValue) -> oldValue, LinkedHashMap::new));
 
 
-        return List.of();
+        return new ArrayList<>(collect.keySet());
     }
 
     public static String getSomeDialog() {
