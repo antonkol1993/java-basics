@@ -28,18 +28,16 @@ public class ChatIssue {
     public List<String> getTopChatter(String dialog, int users) {
         String[] lines = dialog.split("\\n");
 
-//        String[] namesList = new String[lines.length];
-//        Integer[] wordsCountList = new Integer[lines.length];
         Map<String, Integer> authorsMap = new HashMap<>();
         for (int i = 0; i < lines.length; i++) {
             //name
             String[] split = lines[i].split(":");
+
             String name = split[0];
 //            namesList[i] = name;
 
             //count
-            String[] subString = split[1].trim().split(" +");
-            int quantityWords = subString.length - 1;
+            int quantityWords = split[1].trim().split(" +").length - 1;
 //            wordsCountList[i] = quantityWords;
 
             //map
@@ -63,8 +61,9 @@ public class ChatIssue {
         Map<String, Integer> collect = authorsMap
                 .entrySet()
                 .stream()
-                .sorted(Map.Entry.comparingByValue())
-//                .limit(users)
+                .sorted((c1, c2) -> c2.getValue().compareTo(c1.getValue()))
+                .limit(users)
+                .sorted((c1, c2) -> c1.getKey().compareTo(c2.getKey()))
                 .collect(Collectors.toMap(
                         Map.Entry::getKey,
                         Map.Entry::getValue,
