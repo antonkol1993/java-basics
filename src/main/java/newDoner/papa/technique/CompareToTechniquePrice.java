@@ -1,0 +1,22 @@
+package newDoner.papa.technique;
+
+import java.util.Comparator;
+
+public class CompareToTechniquePrice implements Comparator<AbstractTechnique>{
+
+
+
+        @Override
+        public int compare(AbstractTechnique o1, AbstractTechnique o2) {
+            int obj1 = (int)o1.getPrice();
+            int obj2 = (int)o2.getPrice();
+
+            if ( ;
+             ) {
+
+            }
+
+            return  obj1 - obj2;
+        }
+    }
+
