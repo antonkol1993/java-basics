@@ -6,6 +6,7 @@ import newDoner.papa.technique.MobilePhone;
 import newDoner.papa.technique.Monitor;
 import newDoner.papa.technique.TV;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class TechniqueUtils {
@@ -90,12 +91,11 @@ public class TechniqueUtils {
         return tVList;
     }
 
-    public static List<List<? extends AbstractTechnique>> allTechniqueList() {
-        List<List<? extends AbstractTechnique>> allTechniqueList = List.of(
-                mobilePhoneList,
-                monitorList,
-                tVList
-        );
+    public static List<AbstractTechnique> allTechniqueList() {
+        List<AbstractTechnique> allTechniqueList = new ArrayList<>();
+        allTechniqueList.addAll(mobilePhoneList);
+        allTechniqueList.addAll(monitorList);
+        allTechniqueList.addAll(tVList);
 
         return allTechniqueList;
     }

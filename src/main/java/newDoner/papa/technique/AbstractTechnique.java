@@ -26,10 +26,11 @@ public class AbstractTechnique {
 
     @Override
     public String toString() {
-        return "AbstractTechnique{" +
-                "price=" + price +
-                ", powerConsumption=" + powerConsumption +
-                ", name='" + name + '\'' +
-                '}';
+        return
+                    ", name='" + name + '\'' +
+                    "price=" + price +
+                    ", powerConsumption=" + powerConsumption +
+
+                    '}';
     }
 }

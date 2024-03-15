@@ -35,16 +35,16 @@ public class Special {
         mat = matrix();
         int count = 0;
         for (int i = 0; i < mat.length; i ++) {
-            for (int j = 0; j < mat[i].length; j ++) {
+            for (int j = 0; j < mat[i].length; j++) {
                 if (mat[i][j] == 1) {
-                     for (int k = 0; k < mat.length; k ++) {
-                         for (int f = 0; f < mat[i].length; f ++) {
+                    for (int k = 0; k < mat.length; k++) {
+                        for (int f = 0; f < mat[i].length; f++) {
 
-                         }
-                     }
+                        }
+                    }
                 }
             }
-
+        }
         return count;
     }
 
