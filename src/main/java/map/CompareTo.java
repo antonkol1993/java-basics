@@ -1,4 +1,4 @@
-package collections.map;
+package map;
 
 public class CompareTo {
 

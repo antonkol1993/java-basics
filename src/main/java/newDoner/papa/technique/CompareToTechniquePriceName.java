@@ -2,7 +2,7 @@ package newDoner.papa.technique;
 
 import java.util.Comparator;
 
-public class CompareToTechniquePrice implements Comparator<AbstractTechnique> {
+public class CompareToTechniquePriceName implements Comparator<AbstractTechnique> {
 
 
     @Override

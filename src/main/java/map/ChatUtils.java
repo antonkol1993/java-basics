@@ -1,4 +1,4 @@
-package collections.map;
+package map;
 
 
 import java.util.HashMap;
@@ -44,13 +44,7 @@ public class ChatUtils {
             } else authorsList.put(nameList(dialogSplit)[i], wordsQuantity(dialogSplit)[i]);
         }
 
-        return authorsList(dialogSplit).entrySet()
-                .stream()
-                .sorted(Map.Entry.comparingByValue())
-                .collect(Collectors.toMap(
-                        Map.Entry::getKey,
-                        Map.Entry::getValue,
-                        (oldValue, newValue) -> oldValue, LinkedHashMap::new));
+        return authorsList;
     }
 
     public Map<String, Integer> sort(String[] dialogSplit) {

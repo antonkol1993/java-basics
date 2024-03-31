@@ -40,15 +40,15 @@ public class TechniqueUtils {
     private static final List<Monitor> monitorList;
 
     static {
-        Monitor monitorMSIOptixMAG275R2 = new Monitor("MSI Optix MAG275R2", 1044.77, 110,
+        Monitor monitorMSIOptixMAG275R2 = new Monitor("MSI Optix MAG275R2", 1000, 110,
                 27, 30_000_000);
-        Monitor monitorAOC27V5C = new Monitor("AOC 27V5C", 720.05, 98,
+        Monitor monitorAOC27V5C = new Monitor("AOC 27V5C", 1000, 98,
                 27, 27_000_000);
-        Monitor monitorASRockPG27FF1A = new Monitor("ASRock PG27FF1A", 658.69, 100,
+        Monitor monitorASRockPG27FF1A = new Monitor("ASRock PG27FF1A", 1000, 100,
                 27, 29_000_000);
-        Monitor monitorLGUltraGear27GN600B = new Monitor("LG UltraGear 27GN600-B", 679,
+        Monitor monitorLGUltraGear27GN600B = new Monitor("LG UltraGear 27GN600-B", 1000,
                 120, 27, 32_000_000);
-        Monitor monitorMSIG2712 = new Monitor("MSI G2712", 976, 115, 27,
+        Monitor monitorMSIG2712 = new Monitor("MSI G2712", 1000, 115, 27,
                 35_000_000);
 
         monitorList = List.of(
@@ -63,11 +63,11 @@ public class TechniqueUtils {
     private static final List<TV> tVList;
 
     static {
-        TV tvXiaomiTVQ255 = new TV("Xiaomi TV Q2 55", 1950, 180, 55, 40_000_000);
-        TV tvSamsungOLED4KS90C = new TV("Samsung OLED 4K S90C", 6450, 195, 65, 55_000_000);
-        TV tvYandexTVWithAlisa = new TV("Яндекс ТВ с Алисой 50", 1078, 178, 50, 31_000_000);
-        TV tvBlaupunkt55UW5000T = new TV("Blaupunkt 55UW5000T", 1299, 168, 55, 39_000_000);
-        TV tvLGC3OLED65C3RLA = new TV("LG C3 OLED65C3RLA", 6090, 190, 65, 37_000_000);
+        TV tvXiaomiTVQ255 = new TV("Xiaomi TV Q2 55", 1000, 180, 55, 40_000_000);
+        TV tvSamsungOLED4KS90C = new TV("Samsung OLED 4K S90C", 1000, 195, 65, 55_000_000);
+        TV tvYandexTVWithAlisa = new TV("Яндекс ТВ с Алисой 50", 1000, 178, 50, 31_000_000);
+        TV tvBlaupunkt55UW5000T = new TV("Blaupunkt 55UW5000T", 1000, 168, 55, 39_000_000);
+        TV tvLGC3OLED65C3RLA = new TV("LG C3 OLED65C3RLA", 99999, 190, 65, 37_000_000);
 
         tVList = List.of(
                 tvXiaomiTVQ255,

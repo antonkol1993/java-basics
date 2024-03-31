@@ -1,6 +1,6 @@
 package leetcode.special.number;
 
-import java.util.Arrays;
+import java.util.*;
 
 import static java.util.Arrays.*;
 
@@ -9,6 +9,10 @@ public class Main {
         Special special = new Special(3,3);
 
         special.matrix();
+        Map <String,String> asdas = Collections.unmodifiableMap(new HashMap<>() {
+
+        });
+//        asdas.computeIfAbsent()
 
     }
 

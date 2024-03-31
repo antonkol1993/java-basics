@@ -1,11 +1,7 @@
-package collections.map;
+package map;
 
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class ChatIssue {
@@ -48,13 +44,22 @@ public class ChatIssue {
 //            }
 
 
+//            authorsMap.compute();
+//            authorsMap.computeIfAbsent();
+//            authorsMap.computeIfPresent();
+
 //            authorsList.computeIfAbsent()
 
             authorsMap.putIfAbsent(name, quantityWords);
+
             authorsMap.computeIfPresent(name, (k, v) -> v + quantityWords);
 
 //            authorsMap.compute(name, (k, v) -> quantityWords + (v == null ? 0 : v));
         }
+
+//        Comparator<Integer> tComparator = Comparator.naturalOrder();
+//        Comparator<Integer> reversed = tComparator.reversed();
+
 
         System.out.println(authorsMap);
 
@@ -63,6 +68,7 @@ public class ChatIssue {
                 .stream()
                 .sorted((c1, c2) -> c2.getValue().compareTo(c1.getValue()))
                 .limit(users)
+//                .sorted()
                 .sorted((c1, c2) -> c1.getKey().compareTo(c2.getKey()))
                 .collect(Collectors.toMap(
                         Map.Entry::getKey,

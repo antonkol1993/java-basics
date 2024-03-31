@@ -1,9 +1,13 @@
 package newDoner.papa.one.components.food;
 
 public class Snack extends OneIngredientFood {
-
-    public Snack(String name, FoodType type, double price) {
+private int type;
+    public Snack(String name, int type, double price) {
         super(name, type, price);
+        this.type = type;
     }
 
+    public int getType() {
+        return type;
+    }
 }

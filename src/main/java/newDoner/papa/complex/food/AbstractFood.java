@@ -20,6 +20,12 @@ public abstract class AbstractFood implements ComplexFood {
         this.sauces = sauces;
     }
 
+    public AbstractFood(String name, double price) {
+        this.name = name;
+        this.price = price;
+        sauces = null;
+        ingredients = null;
+    }
 
     @Override
     public boolean equals(Object object) {
