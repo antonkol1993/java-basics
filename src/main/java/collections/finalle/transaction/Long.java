@@ -14,8 +14,9 @@ public class Long {
     }
 
 
-
-
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
 
     public int getQuantityTransaction() {
         return quantityTransaction;
