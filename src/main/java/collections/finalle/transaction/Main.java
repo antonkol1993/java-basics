@@ -7,5 +7,10 @@ public class Main {
         Long petya = new Long("Petya", 250);
         System.out.println(vasya.getPersonId());
         System.out.println(petya.getPersonId());
+
+        System.out.println(vasya.getAmount());
+        TransactionUtils transactionUtils = new TransactionUtils();
+        transactionUtils.transactions(vasya);
     }
+
 }
