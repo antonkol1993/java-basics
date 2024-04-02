@@ -24,8 +24,7 @@ public class BigDecimal {
 
     @Override
     public String toString() {
-        String sb = "{" + amount +
+        return "{" + amount +
                 '}';
-        return sb;
     }
 }
