@@ -7,6 +7,7 @@ public class Main {
 
         Board board = new Board(4);
 
-        System.out.println(Arrays.deepToString(board.board()));
+//        System.out.println(Arrays.deepToString(board.board()));
+        board.outInConsole();
     }
 }
