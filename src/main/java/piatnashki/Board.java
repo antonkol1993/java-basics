@@ -50,39 +50,32 @@ public class Board {
         board[board.length - 1][board.length - 1] = temp;
 
 
-        // todo out in console
-        System.out.println();
-        for (
-                Integer[] ints : board) {
-            for (j = 0; j < board.length; j++) {
-                System.out.print(ints[j] + " ");
-            }
-            System.out.println();
-        }
+//        // todo out in console
+//        System.out.println();
+//        for (
+//                Integer[] ints : board) {
+//            for (j = 0; j < board.length; j++) {
+//                System.out.print(ints[j] + " ");
+//            }
+//            System.out.println();
+//        }
 
         return board;
     }
 
     public void outInConsole() {
-        newGame();
-//        board = newGame();
-//        int i = 0;
-//        while (i < board.length) {
-//            int j = 0;
-//            while (j < board[i].length) {
-//                System.out.printf("%3f",board[i][j]);
-//                j++;
-//            }
-//            i++;
-//        }
-        for (int i = 0; i < board.length; i++) {
-            for (int j = 0; j < board[i].length; j++) {
-
-                System.out.print(board[i][j] + "     ");
+        int i = 0;
+        while (i < board.length) {
+            int j = 0;
+            while (j < board[i].length) {
+                System.out.printf("%6d",board[i][j]);
+                j++;
             }
             System.out.println();
+            i++;
         }
     }
+
 //    public Integer[][] moveTitles () {
 //
 //        Scanner scanner = new Scanner(System.in);
@@ -95,8 +88,8 @@ public class Board {
 //        return newGame();
 //    }
 
-//    public Integer[][] getBoard() {
-//        return board;
-//    }
+    public Integer[][] getBoard() {
+        return board;
+    }
 
 }
