@@ -1,5 +1,7 @@
 package piatnashki;
 
+import java.math.BigInteger;
+import java.util.Objects;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -76,17 +78,25 @@ public class Board {
         }
     }
 
-//    public Integer[][] moveTitles () {
-//
-//        Scanner scanner = new Scanner(System.in);
-////        outInConsole(newGame());
-////        for (;;) {
-////
-////            System.out.println();
-////        }
-////        board[][]
-//        return newGame();
-//    }
+    public void moveTitles () {
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("enter the number");
+        int numb = scanner.nextInt();
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[length].length; j++) {
+
+                if (Objects.equals(board[i][j], numb)) {
+                    System.out.println("asdasdsdadasdad  ");
+                }
+
+            }
+        }
+
+
+
+
+    }
 
     public Integer[][] getBoard() {
         return board;

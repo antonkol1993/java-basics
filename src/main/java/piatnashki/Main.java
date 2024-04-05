@@ -10,5 +10,6 @@ public class Main {
 //        System.out.println(Arrays.deepToString(board.board()));
         board.newGame();
         board.outInConsole();
+        board.moveTitles();
     }
 }
