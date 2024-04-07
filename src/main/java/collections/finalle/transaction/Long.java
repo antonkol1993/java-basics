@@ -1,20 +1,22 @@
 package collections.finalle.transaction;
 
+import java.math.BigDecimal;
+
 public class Long {
-    private final int personId;
-    private final String name;
-    private final int quantityTransaction;
+    private  int personId;
+    private  String name;
+    private  int quantityTransaction;
     private BigDecimal amount;
 
     public Long(String name, int quantityTransaction) {
         this.quantityTransaction = quantityTransaction;
         this.personId = hashCode();
         this.name = name;
-        amount = new BigDecimal();
+
     }
 
-
-
+    public Long() {
+    }
 
     public int getQuantityTransaction() {
         return quantityTransaction;
