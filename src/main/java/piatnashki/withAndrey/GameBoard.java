@@ -22,6 +22,10 @@ public class GameBoard {
         return length;
     }
 
+    public void setBoard(Integer[] board) {
+        this.board = board;
+    }
+
     @Override
     public boolean equals(Object object) {
         if (this == object) return true;

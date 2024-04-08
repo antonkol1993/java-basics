@@ -33,11 +33,13 @@ public class GameBoardService {
             moveBoard.set(move,0);
             moveBoard.set(move - 1,move);
         }
+        GameBoard gameBoard1 = new GameBoard(gameBoard.getLength());
         for (int i = 0; i < gameBoard.getBoard().length; i++) {
-            gameBoard.getBoard()[i] = moveBoard.get(i);
+
+            gameBoard1.getBoard()[i] = moveBoard.get(i);
         }
 
-        return gameBoard;
+        return gameBoard1;
     }
 
 
