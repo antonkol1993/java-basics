@@ -1,7 +1,6 @@
 package piatnashki.withAndrey;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -23,23 +22,32 @@ public class GameBoardService {
         return gameBoard;
     }
 
-    public GameBoard startMove(GameBoard gameBoard, int move) {
-        List<Integer> moveBoard = new ArrayList<>(Arrays.asList(gameBoard.getBoard()));
-        if (moveBoard.get(move + 1) == 0) {
-            moveBoard.set(move,0);
-            moveBoard.set(move + 1,move);
-        }
-        if (moveBoard.get(move - 1) == 0) {
-            moveBoard.set(move,0);
-            moveBoard.set(move - 1,move);
-        }
-        GameBoard gameBoard1 = new GameBoard(gameBoard.getLength());
-        for (int i = 0; i < gameBoard.getBoard().length; i++) {
+    public GameBoard startMove(GameBoard gameBoard, int numb) {
 
-            gameBoard1.getBoard()[i] = moveBoard.get(i);
+        for (int i = 0; i < gameBoard.getLength(); i++) {
+            if (gameBoard.getBoard()[i] == numb && gameBoard.getBoard()[i + 1] == 0 && i + 1 < gameBoard.getLength()) {
+                gameBoard.getBoard()[i] = 0;
+                gameBoard.getBoard()[i + 1] = numb;
+                return gameBoard;
+            } else if (gameBoard.getBoard()[i] == numb && gameBoard.getBoard()[i - 1] == 0) {
+                gameBoard.getBoard()[i] = 0;
+                gameBoard.getBoard()[i - 1] = numb;
+                return gameBoard;
+            } else if (gameBoard.getBoard()[i] == numb && gameBoard.getBoard()[i - 4] == 0) {
+                gameBoard.getBoard()[i] = 0;
+                gameBoard.getBoard()[i - 4] = numb;
+                return gameBoard;
+            } else if (gameBoard.getBoard()[i] == numb && gameBoard.getBoard()[i + 4] == 0) {
+                gameBoard.getBoard()[i] = 0;
+                gameBoard.getBoard()[i + 4] = numb;
+                return gameBoard;
+            }
+
+
         }
 
-        return gameBoard1;
+
+        return gameBoard;
     }
 
 
