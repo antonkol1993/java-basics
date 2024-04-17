@@ -6,11 +6,11 @@ import java.util.Objects;
 public class GameBoard {
 
     private Integer[] board;
-    private final Integer length;
+    private final Integer size;
 
-    public GameBoard(Integer length) {
-        this.length = length;
-        board = new Integer[length * length];
+    public GameBoard(Integer size) {
+        this.size = size;
+        board = new Integer[size * size];
     }
 
 
@@ -18,8 +18,14 @@ public class GameBoard {
         return board;
     }
 
-    public Integer getLength() {
-        return length;
+
+    public Integer getArrayLength() {
+        return board.length;
+    }
+
+
+    public Integer getSize() {
+        return size;
     }
 
     public void setBoard(Integer[] board) {
@@ -35,15 +41,15 @@ public class GameBoard {
 
         // Probably incorrect - comparing Object[] arrays with Arrays.equals
         if (!Arrays.equals(board, gameBoard.board)) return false;
-        return Objects.equals(length, gameBoard.length);
+        return Objects.equals(size, gameBoard.size);
     }
 
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        for (int i = 0; i < length; i++) {
-            for (int j = 0; j < length; j++) {
-                String val = board[i * length + j] == 0 ? "[]" : board[i * length + j].toString();
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                String val = board[i * size + j] == 0 ? "[]" : board[i * size + j].toString();
                 builder.append(String.format("%3s", val));
             }
             builder.append("\n");

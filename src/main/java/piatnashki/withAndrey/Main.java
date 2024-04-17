@@ -20,14 +20,22 @@ public class Main {
                 Scanner scanner = new Scanner(System.in);
                 System.out.println("enter the number");
 
-                    int numb = scanner.nextInt();
+//                String next = scanner.next();
+//
+//                try {
+//                    int i = Integer.parseInt(next);
+//                } catch (NumberFormatException e) {
+//                    System.out.println("try again");
+//                }
 
-                if (numb < 1 || numb > 15 ) {
-                    System.out.println("Please enter the correct number (from 1 to 15 )");
-                }
+                int numb = scanner.nextInt();
 
-                GameBoard newBoard = gameBoardService.startMove(gameBoard, numb);
-                System.out.println(newBoard);
+//                if (numb < 1 || numb > 15 ) {
+//                    System.out.println("Please enter the correct number (from 1 to 15 )");
+//                }
+
+                gameBoard = gameBoardService.startMove(gameBoard, numb);
+                System.out.println(gameBoard);
 
             }
 
