@@ -24,20 +24,20 @@ public class GameBoardService {
 
     public GameBoard startMove(GameBoard gameBoard, int numb) {
         for (int i = 0; i < gameBoard.getArrayLength(); i++) {
-            if(gameBoard.getBoard()[i] == numb) {
-                if (gameBoard.getBoard()[i + 1] == 0 && i + 1 < gameBoard.getArrayLength()) {
+            if(gameBoard.getBoard()[i] == numb  ) {
+                if (i + 1 < gameBoard.getArrayLength() && gameBoard.getBoard()[i + 1] == 0  ) {
                     gameBoard.getBoard()[i] = 0;
                     gameBoard.getBoard()[i + 1] = numb;
                     return gameBoard;
-                } else if (gameBoard.getBoard()[i - 1] == 0) {
+                } else if (i - 1 >= 0 && gameBoard.getBoard()[i - 1] == 0) {
                     gameBoard.getBoard()[i] = 0;
                     gameBoard.getBoard()[i - 1] = numb;
                     return gameBoard;
-                } else if (gameBoard.getBoard()[i - 4] == 0) {
+                } else if (i - 4 >= 0 && gameBoard.getBoard()[i - 4] == 0) {
                     gameBoard.getBoard()[i] = 0;
                     gameBoard.getBoard()[i - 4] = numb;
                     return gameBoard;
-                } else if ( gameBoard.getBoard()[i + 4] == 0) {
+                } else if ( i + 4 < gameBoard.getArrayLength() && gameBoard.getBoard()[i + 4] == 0) {
                     gameBoard.getBoard()[i] = 0;
                     gameBoard.getBoard()[i + 4] = numb;
                     return gameBoard;
