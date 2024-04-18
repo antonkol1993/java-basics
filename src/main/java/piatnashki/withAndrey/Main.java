@@ -9,7 +9,8 @@ public class Main {
 
     public static void main(String[] args) {
         GameBoardService gameBoardService = new GameBoardService();
-        GameBoard gameBoard = gameBoardService.newGame(4);
+//        GameBoard gameBoard = gameBoardService.newGame(4);
+        GameBoard gameBoard = gameBoardService.newGameNotRandom(4);
         System.out.println(gameBoard);
 //        gameBoardService.move(gameBoard,5);
 //        System.out.println(gameBoard);
@@ -17,6 +18,10 @@ public class Main {
 
 
             for (;;) {
+                if (gameBoardService.win(gameBoard)) {
+                    System.out.println("You win!!!!");
+                    return;
+                }
                 Scanner scanner = new Scanner(System.in);
                 System.out.println("enter the number");
 
@@ -34,8 +39,11 @@ public class Main {
 //                    System.out.println("Please enter the correct number (from 1 to 15 )");
 //                }
 
-                gameBoard = gameBoardService.startMove(gameBoard, numb);
+                gameBoard = gameBoardService.move(gameBoard, numb);
                 System.out.println(gameBoard);
+
+
+
 
             }
 

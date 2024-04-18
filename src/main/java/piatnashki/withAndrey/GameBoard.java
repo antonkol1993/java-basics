@@ -32,16 +32,13 @@ public class GameBoard {
         this.board = board;
     }
 
+
+
     @Override
-    public boolean equals(Object object) {
-        if (this == object) return true;
-        if (object == null || getClass() != object.getClass()) return false;
-
-        GameBoard gameBoard = (GameBoard) object;
-
-        // Probably incorrect - comparing Object[] arrays with Arrays.equals
-        if (!Arrays.equals(board, gameBoard.board)) return false;
-        return Objects.equals(size, gameBoard.size);
+    public int hashCode() {
+        int result = Arrays.hashCode(board);
+        result = 31 * result + size.hashCode();
+        return result;
     }
 
     @Override
@@ -57,5 +54,15 @@ public class GameBoard {
         return builder.toString();
     }
 
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
 
+        GameBoard gameBoard = (GameBoard) object;
+
+        // Probably incorrect - comparing Object[] arrays with Arrays.equals
+        if (!Arrays.equals(board, gameBoard.board)) return false;
+        return size.equals(gameBoard.size);
+    }
 }
