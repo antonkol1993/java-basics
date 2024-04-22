@@ -33,16 +33,13 @@ public class Main {
             }
 
             try {
-                if (scanner.hasNextInt()) {
-                    numb = scanner.nextInt();
-                    boolean b = numb <= -100000 || numb > 321323;
-                };
+                numb = scanner.nextInt();
+
             } catch (NumberFormatException e) {
                 System.out.println("This is a very long number");
             } catch (Exception e) {
-                System.out.println("It's a not number type");
-            }
-
+//                System.out.println("It's a not number type");
+//            }
 
 
 //                int numb = scanner.nextInt();
@@ -52,10 +49,11 @@ public class Main {
 //                }
 
 
+            }
+
+
         }
 
 
     }
-
-
 }
