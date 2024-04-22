@@ -1,5 +1,7 @@
 package piatnashki.withAndrey;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -7,15 +9,18 @@ import java.util.Random;
 public class GameBoardService {
 
     public boolean win(GameBoard gameBoard) {
-        GameBoard gameBoard1 = new GameBoard(gameBoard.getSize());
-        for (int i = 0; i < gameBoard.getBoard().length; i++) {
-            gameBoard1.getBoard()[i] = i;
-        }
-
-//        System.out.println(gameBoard1);
-//        System.out.println();
-        return gameBoard.equals(gameBoard1);
+        GameBoard finalGameBoard = getFinalGameBoard(gameBoard.getSize());
+        return finalGameBoard.equals(gameBoard);
     }
+
+    private GameBoard getFinalGameBoard(int size) {
+        GameBoard gameBoard = new GameBoard(size);
+        for (int i = 0; i < gameBoard.getBoard().length; i++) {
+            gameBoard.getBoard()[i] = i;
+        }
+        return gameBoard;
+    }
+
     public GameBoard newGameNotRandom(int n) {
         GameBoard gameBoard = new GameBoard(n);
         List<Integer> allValues = new ArrayList<>();

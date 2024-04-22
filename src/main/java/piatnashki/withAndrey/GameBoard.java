@@ -62,7 +62,6 @@ public class GameBoard {
         GameBoard gameBoard = (GameBoard) object;
 
         // Probably incorrect - comparing Object[] arrays with Arrays.equals
-        if (!Arrays.equals(board, gameBoard.board)) return false;
-        return size.equals(gameBoard.size);
+        return Arrays.equals(board, gameBoard.board);
     }
 }
