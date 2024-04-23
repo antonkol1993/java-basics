@@ -27,11 +27,8 @@ public class GameBoardService {
         for (int i = 0; i < gameBoard.getArrayLength(); i++) {
             allValues.add(i,i);
         }
-
-
         for (int i = 0; i < gameBoard.getBoard().length; i++) {
             gameBoard.getBoard()[i] = allValues.get(i);
-
         }
         return gameBoard;
     }

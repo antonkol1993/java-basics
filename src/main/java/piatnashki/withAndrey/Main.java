@@ -28,28 +28,43 @@ public class Main {
                     gameBoard = gameBoardService.move(gameBoard, numb);
                     System.out.println(gameBoard);
                 }
-            } else {
-                System.out.println("Sorry, enter the correct number (only numbers from 1 to " + (gameBoard.getArrayLength() - 1) + ")");
+            } else if (scanner.hasNext()) {
+                String s = scanner.next();
+                if (s.equals("new") || s.equals("n")) {
+                    System.out.println("What is the count of board?");
+                    int count = scanner.nextInt();
+                    gameBoard = new GameBoardService().newGame(count);
+                    System.out.println(gameBoard
+                    );
+                } else if (s.equals("exit") || s.equals("ex")) {
+                    System.out.println("You have completed the game!!!!");
+                    return;
+                } else {
+
+
+                    System.out.println("Sorry, enter the correct number (only numbers from 1 to " + (gameBoard.getArrayLength() - 1) + ") or enter correct text(symbol)");
+                }
             }
 
-            try {
-                numb = scanner.nextInt();
 
-            } catch (NumberFormatException e) {
-                System.out.println("This is a very long number");
-            } catch (Exception e) {
-//                System.out.println("It's a not number type");
+//            try {
+//                numb = scanner.nextInt();
+//
+//            } catch (NumberFormatException e) {
+//                System.out.println("This is a very long number");
+//            } catch (Exception e) {
+////                System.out.println("It's a not number type");
+////            }
+//
+//
+////                int numb = scanner.nextInt();
+//
+////                if (numb < 1 || numb > 15 ) {
+////                    System.out.println("Please enter the correct number (from 1 to 15 )");
+////                }
+//
+//
 //            }
-
-
-//                int numb = scanner.nextInt();
-
-//                if (numb < 1 || numb > 15 ) {
-//                    System.out.println("Please enter the correct number (from 1 to 15 )");
-//                }
-
-
-            }
 
 
         }
