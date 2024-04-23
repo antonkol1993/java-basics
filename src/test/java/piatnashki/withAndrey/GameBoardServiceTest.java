@@ -18,15 +18,19 @@ class GameBoardServiceTest {
             "5", "8", "10"
     })
     void win(int value) {
-        GameBoardService gameBoardService = new GameBoardService();
-        GameBoard gameBoard = gameBoardService.newGameNotRandom(value);
-
         GameBoard gameBoard1 = new GameBoard(value);
+
         for (int i = 0; i < gameBoard1.getArrayLength(); i++) {
             gameBoard1.getBoard()[i] = i;
         }
 
-        Assertions.assertEquals(gameBoard,gameBoard1);
+
+        GameBoardService gameBoardService = new GameBoardService();
+        GameBoard gameBoard = gameBoardService.newGameNotRandom(value);
+
+
+
+        Assertions.assertEquals(gameBoard1,gameBoard);
     }
 
 
