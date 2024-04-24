@@ -69,6 +69,7 @@ class GameBoardServiceTest {
         Integer [] testBoard = new Integer[count * count];
 
         List<Integer> allValues = new ArrayList<>();
+
         for (int i = 0; i < gameBoard.getArrayLength(); i++) {
             allValues.add(i,i);
             testBoard[i] = allValues.get(i);
@@ -94,4 +95,6 @@ class GameBoardServiceTest {
     void move() {
 
     }
+
+
 }
