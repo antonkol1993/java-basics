@@ -5,7 +5,10 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -44,7 +47,7 @@ class GameBoardServiceTest {
         for (int i = 0; i < arr.length; i++) {
             arr[i] = i;
         }
-        GameBoardService gameBoardService = new GameBoardService();
+
         GameBoard gameBoard = new GameBoard(size);
 
         for (int i = 0; i < gameBoard.getArrayLength(); i++) {
@@ -54,11 +57,41 @@ class GameBoardServiceTest {
         assertArrayEquals( arr,gameBoard.getBoard());
     }
 
-    @Test
-    void newGame() {
+    @ParameterizedTest
+    @CsvSource(value = {
+            "2", "3", "4",
+            "5", "8", "9", "10"
+    })
+    void newGame(int count) {
+
+        GameBoard gameBoard = new GameBoard(count);
+
+        Integer [] testBoard = new Integer[count * count];
+
+        List<Integer> allValues = new ArrayList<>();
+        for (int i = 0; i < gameBoard.getArrayLength(); i++) {
+            allValues.add(i,i);
+            testBoard[i] = allValues.get(i);
+        }
+        for (int i = 0; i < gameBoard.getArrayLength(); i++) {
+            int index = new Random().nextInt(gameBoard.getArrayLength());
+            gameBoard.getBoard()[i] = allValues.get(index);
+            allValues.remove(index);
+        }
+        int sumTestBoard = 0;
+        int sumGameBoard = 0;
+        for (int i = 0; i < count * count; i++) {
+            sumGameBoard += gameBoard.getBoard()[i];
+            sumTestBoard += testBoard[i];
+        }
+//            assertNotEquals(testBoard,gameBoard);
+            assertEquals(sumTestBoard,sumGameBoard);
+
+
     }
 
     @Test
     void move() {
+
     }
 }
